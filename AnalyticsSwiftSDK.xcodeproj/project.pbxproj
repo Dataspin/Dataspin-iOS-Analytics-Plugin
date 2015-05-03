@@ -10,6 +10,20 @@
 		B5255AD01AF6827200C04990 /* AnalyticsSwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5255AD61AF6827200C04990 /* AnalyticsSwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; };
 		B5255ADD1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */; };
+		B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255AE61AF6828400C04990 /* DataspinManager.swift */; };
+		B5255B301AF6887B00C04990 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */; };
+		B53919D11AF6901D0034F7BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919D01AF6901D0034F7BD /* AppDelegate.swift */; };
+		B53919D31AF6901D0034F7BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919D21AF6901D0034F7BD /* ViewController.swift */; };
+		B53919D61AF6901D0034F7BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53919D41AF6901D0034F7BD /* Main.storyboard */; };
+		B53919D81AF6901D0034F7BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53919D71AF6901D0034F7BD /* Images.xcassets */; };
+		B53919DB1AF6901D0034F7BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53919D91AF6901D0034F7BD /* LaunchScreen.xib */; };
+		B53919E71AF6901D0034F7BD /* DataspinTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919E61AF6901D0034F7BD /* DataspinTestTests.swift */; };
+		B53919EE1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; };
+		B53919EF1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B53919F41AF699B90034F7BD /* logo_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B53919F31AF699B90034F7BD /* logo_dark.png */; };
+		B53919F61AF6A4C90034F7BD /* logo_dark kopia.png in Resources */ = {isa = PBXBuildFile; fileRef = B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */; };
+		B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F71AF6AE8B0034F7BD /* Alamofire.swift */; };
+		B53919FA1AF6B17E0034F7BD /* AlamofireSwifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,7 +34,35 @@
 			remoteGlobalIDString = B5255AC91AF6827200C04990;
 			remoteInfo = AnalyticsSwiftSDK;
 		};
+		B53919E11AF6901D0034F7BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5255AC11AF6827200C04990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B53919CB1AF6901D0034F7BD;
+			remoteInfo = DataspinTest;
+		};
+		B53919F01AF6908D0034F7BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5255AC11AF6827200C04990 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5255AC91AF6827200C04990;
+			remoteInfo = AnalyticsSwiftSDK;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B53919F21AF6908E0034F7BD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B53919EF1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnalyticsSwiftSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,6 +71,22 @@
 		B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalyticsSwiftSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5255ADB1AF6827200C04990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSwiftSDKTests.swift; sourceTree = "<group>"; };
+		B5255AE61AF6828400C04990 /* DataspinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataspinManager.swift; sourceTree = "<group>"; };
+		B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../Downloads/SwiftyJSON-2.1.2/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
+		B53919CC1AF6901D0034F7BD /* DataspinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataspinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53919CF1AF6901D0034F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53919D01AF6901D0034F7BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B53919D21AF6901D0034F7BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B53919D51AF6901D0034F7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B53919D71AF6901D0034F7BD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B53919DA1AF6901D0034F7BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B53919E01AF6901D0034F7BD /* DataspinTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataspinTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B53919E51AF6901D0034F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B53919E61AF6901D0034F7BD /* DataspinTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataspinTestTests.swift; sourceTree = "<group>"; };
+		B53919F31AF699B90034F7BD /* logo_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dark.png; sourceTree = "<group>"; };
+		B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_dark kopia.png"; sourceTree = "<group>"; };
+		B53919F71AF6AE8B0034F7BD /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSwifty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +105,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B53919C91AF6901D0034F7BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53919EE1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B53919DD1AF6901D0034F7BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +128,8 @@
 			children = (
 				B5255ACC1AF6827200C04990 /* AnalyticsSwiftSDK */,
 				B5255AD91AF6827200C04990 /* AnalyticsSwiftSDKTests */,
+				B53919CD1AF6901D0034F7BD /* DataspinTest */,
+				B53919E31AF6901D0034F7BD /* DataspinTestTests */,
 				B5255ACB1AF6827200C04990 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +139,8 @@
 			children = (
 				B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */,
 				B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */,
+				B53919CC1AF6901D0034F7BD /* DataspinTest.app */,
+				B53919E01AF6901D0034F7BD /* DataspinTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,7 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */,
+				B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */,
+				B5255AE61AF6828400C04990 /* DataspinManager.swift */,
 				B5255ACD1AF6827200C04990 /* Supporting Files */,
+				B53919F71AF6AE8B0034F7BD /* Alamofire.swift */,
+				B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */,
 			);
 			path = AnalyticsSwiftSDK;
 			sourceTree = "<group>";
@@ -98,6 +179,46 @@
 			isa = PBXGroup;
 			children = (
 				B5255ADB1AF6827200C04990 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B53919CD1AF6901D0034F7BD /* DataspinTest */ = {
+			isa = PBXGroup;
+			children = (
+				B53919F31AF699B90034F7BD /* logo_dark.png */,
+				B53919D01AF6901D0034F7BD /* AppDelegate.swift */,
+				B53919D21AF6901D0034F7BD /* ViewController.swift */,
+				B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */,
+				B53919D41AF6901D0034F7BD /* Main.storyboard */,
+				B53919D71AF6901D0034F7BD /* Images.xcassets */,
+				B53919D91AF6901D0034F7BD /* LaunchScreen.xib */,
+				B53919CE1AF6901D0034F7BD /* Supporting Files */,
+			);
+			path = DataspinTest;
+			sourceTree = "<group>";
+		};
+		B53919CE1AF6901D0034F7BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B53919CF1AF6901D0034F7BD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B53919E31AF6901D0034F7BD /* DataspinTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				B53919E61AF6901D0034F7BD /* DataspinTestTests.swift */,
+				B53919E41AF6901D0034F7BD /* Supporting Files */,
+			);
+			path = DataspinTestTests;
+			sourceTree = "<group>";
+		};
+		B53919E41AF6901D0034F7BD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B53919E51AF6901D0034F7BD /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +273,43 @@
 			productReference = B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B53919CB1AF6901D0034F7BD /* DataspinTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B53919EC1AF6901D0034F7BD /* Build configuration list for PBXNativeTarget "DataspinTest" */;
+			buildPhases = (
+				B53919C81AF6901D0034F7BD /* Sources */,
+				B53919C91AF6901D0034F7BD /* Frameworks */,
+				B53919CA1AF6901D0034F7BD /* Resources */,
+				B53919F21AF6908E0034F7BD /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B53919F11AF6908D0034F7BD /* PBXTargetDependency */,
+			);
+			name = DataspinTest;
+			productName = DataspinTest;
+			productReference = B53919CC1AF6901D0034F7BD /* DataspinTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B53919DF1AF6901D0034F7BD /* DataspinTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B53919ED1AF6901D0034F7BD /* Build configuration list for PBXNativeTarget "DataspinTestTests" */;
+			buildPhases = (
+				B53919DC1AF6901D0034F7BD /* Sources */,
+				B53919DD1AF6901D0034F7BD /* Frameworks */,
+				B53919DE1AF6901D0034F7BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B53919E21AF6901D0034F7BD /* PBXTargetDependency */,
+			);
+			name = DataspinTestTests;
+			productName = DataspinTestTests;
+			productReference = B53919E01AF6901D0034F7BD /* DataspinTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,6 +325,13 @@
 					B5255AD41AF6827200C04990 = {
 						CreatedOnToolsVersion = 6.3.1;
 					};
+					B53919CB1AF6901D0034F7BD = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					B53919DF1AF6901D0034F7BD = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = B53919CB1AF6901D0034F7BD;
+					};
 				};
 			};
 			buildConfigurationList = B5255AC41AF6827200C04990 /* Build configuration list for PBXProject "AnalyticsSwiftSDK" */;
@@ -175,6 +340,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = B5255AC01AF6827200C04990;
 			productRefGroup = B5255ACB1AF6827200C04990 /* Products */;
@@ -183,6 +349,8 @@
 			targets = (
 				B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */,
 				B5255AD41AF6827200C04990 /* AnalyticsSwiftSDKTests */,
+				B53919CB1AF6901D0034F7BD /* DataspinTest */,
+				B53919DF1AF6901D0034F7BD /* DataspinTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -202,6 +370,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B53919CA1AF6901D0034F7BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53919D61AF6901D0034F7BD /* Main.storyboard in Resources */,
+				B53919DB1AF6901D0034F7BD /* LaunchScreen.xib in Resources */,
+				B53919F41AF699B90034F7BD /* logo_dark.png in Resources */,
+				B53919F61AF6A4C90034F7BD /* logo_dark kopia.png in Resources */,
+				B53919D81AF6901D0034F7BD /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B53919DE1AF6901D0034F7BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -209,6 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */,
+				B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */,
+				B53919FA1AF6B17E0034F7BD /* AlamofireSwifty.swift in Sources */,
+				B5255B301AF6887B00C04990 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +411,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B53919C81AF6901D0034F7BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53919D31AF6901D0034F7BD /* ViewController.swift in Sources */,
+				B53919D11AF6901D0034F7BD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B53919DC1AF6901D0034F7BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B53919E71AF6901D0034F7BD /* DataspinTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -228,7 +436,36 @@
 			target = B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */;
 			targetProxy = B5255AD71AF6827200C04990 /* PBXContainerItemProxy */;
 		};
+		B53919E21AF6901D0034F7BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B53919CB1AF6901D0034F7BD /* DataspinTest */;
+			targetProxy = B53919E11AF6901D0034F7BD /* PBXContainerItemProxy */;
+		};
+		B53919F11AF6908D0034F7BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */;
+			targetProxy = B53919F01AF6908D0034F7BD /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B53919D41AF6901D0034F7BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B53919D51AF6901D0034F7BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B53919D91AF6901D0034F7BD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B53919DA1AF6901D0034F7BD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B5255ADE1AF6827200C04990 /* Debug */ = {
@@ -323,6 +560,8 @@
 		B5255AE11AF6827200C04990 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,12 +571,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B5255AE21AF6827200C04990 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -380,6 +622,66 @@
 			};
 			name = Release;
 		};
+		B53919E81AF6901D0034F7BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DataspinTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B53919E91AF6901D0034F7BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = DataspinTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B53919EA1AF6901D0034F7BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DataspinTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataspinTest.app/DataspinTest";
+			};
+			name = Debug;
+		};
+		B53919EB1AF6901D0034F7BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DataspinTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataspinTest.app/DataspinTest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,12 +701,30 @@
 				B5255AE21AF6827200C04990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B5255AE31AF6827200C04990 /* Build configuration list for PBXNativeTarget "AnalyticsSwiftSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5255AE41AF6827200C04990 /* Debug */,
 				B5255AE51AF6827200C04990 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B53919EC1AF6901D0034F7BD /* Build configuration list for PBXNativeTarget "DataspinTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B53919E81AF6901D0034F7BD /* Debug */,
+				B53919E91AF6901D0034F7BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B53919ED1AF6901D0034F7BD /* Build configuration list for PBXNativeTarget "DataspinTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B53919EA1AF6901D0034F7BD /* Debug */,
+				B53919EB1AF6901D0034F7BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
