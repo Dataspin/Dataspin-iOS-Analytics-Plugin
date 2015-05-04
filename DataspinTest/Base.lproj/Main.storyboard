@@ -115,6 +115,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GF7-JJ-9eT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qIs-GW-1w1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwG-ON-syp">
@@ -125,6 +126,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="11" y="103" width="120" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="registerUser:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="Afz-fq-kNe"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ica-C7-eEO">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -166,7 +170,7 @@
                                     <rect key="frame" x="128" y="67" width="97" height="30"/>
                                 </variation>
                             </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-jM-ELT">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="a2p-jM-ELT">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="143" y="108" width="20" height="20"/>
@@ -180,6 +184,9 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="23" y="177" width="108" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="registerDevice:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="e9R-pT-tBP"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="APN_Token" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-aa-H0Z">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
@@ -189,7 +196,7 @@
                                     <rect key="frame" x="23" y="141" width="97" height="30"/>
                                 </variation>
                             </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AUz-eE-3Xv">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AUz-eE-3Xv">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="143" y="182" width="20" height="20"/>
@@ -243,7 +250,8 @@
                         <outlet property="facebookIdLabel" destination="Tpp-vN-sVA" id="Lmv-L4-vpW"/>
                         <outlet property="gamecenterIdLabel" destination="onH-Fy-AQ1" id="R80-hp-6h0"/>
                         <outlet property="nameLabel" destination="Ica-C7-eEO" id="1uC-Rn-Buy"/>
-                        <outlet property="onDataspinRegisterDevice" destination="Wrn-M0-W15" id="xoG-Yl-B5P"/>
+                        <outlet property="registerDeviceLoading" destination="AUz-eE-3Xv" id="QRI-mr-uCi"/>
+                        <outlet property="registerUserLoading" destination="a2p-jM-ELT" id="iF3-IY-e7k"/>
                         <outlet property="surnameLabel" destination="T32-cz-XBA" id="8Jp-Yc-kCa"/>
                     </connections>
                 </viewController>

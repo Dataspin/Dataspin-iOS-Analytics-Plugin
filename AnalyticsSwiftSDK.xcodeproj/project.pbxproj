@@ -24,6 +24,7 @@
 		B53919F61AF6A4C90034F7BD /* logo_dark kopia.png in Resources */ = {isa = PBXBuildFile; fileRef = B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */; };
 		B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F71AF6AE8B0034F7BD /* Alamofire.swift */; };
 		B53919FA1AF6B17E0034F7BD /* AlamofireSwifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */; };
+		B5989A5E1AF75CAB00090973 /* DataspinWebRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_dark kopia.png"; sourceTree = "<group>"; };
 		B53919F71AF6AE8B0034F7BD /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSwifty.swift; sourceTree = "<group>"; };
+		B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataspinWebRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,7 @@
 		B5255AC01AF6827200C04990 = {
 			isa = PBXGroup;
 			children = (
-				B5255ACC1AF6827200C04990 /* AnalyticsSwiftSDK */,
+				B5255ACC1AF6827200C04990 /* DataspinSDK */,
 				B5255AD91AF6827200C04990 /* AnalyticsSwiftSDKTests */,
 				B53919CD1AF6901D0034F7BD /* DataspinTest */,
 				B53919E31AF6901D0034F7BD /* DataspinTestTests */,
@@ -145,7 +147,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B5255ACC1AF6827200C04990 /* AnalyticsSwiftSDK */ = {
+		B5255ACC1AF6827200C04990 /* DataspinSDK */ = {
 			isa = PBXGroup;
 			children = (
 				B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */,
@@ -154,7 +156,9 @@
 				B5255ACD1AF6827200C04990 /* Supporting Files */,
 				B53919F71AF6AE8B0034F7BD /* Alamofire.swift */,
 				B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */,
+				B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */,
 			);
+			name = DataspinSDK;
 			path = AnalyticsSwiftSDK;
 			sourceTree = "<group>";
 		};
@@ -397,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */,
+				B5989A5E1AF75CAB00090973 /* DataspinWebRequest.swift in Sources */,
 				B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */,
 				B53919FA1AF6B17E0034F7BD /* AlamofireSwifty.swift in Sources */,
 				B5255B301AF6887B00C04990 /* SwiftyJSON.swift in Sources */,
@@ -719,6 +724,7 @@
 				B53919E91AF6901D0034F7BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B53919ED1AF6901D0034F7BD /* Build configuration list for PBXNativeTarget "DataspinTestTests" */ = {
 			isa = XCConfigurationList;
@@ -727,6 +733,7 @@
 				B53919EB1AF6901D0034F7BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

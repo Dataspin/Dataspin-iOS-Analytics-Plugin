@@ -23,16 +23,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var apnTokenLabel: UITextField!
     @IBOutlet weak var advertisingIdLabel: UITextField!
     
+    @IBOutlet weak var registerUserLoading: UIActivityIndicatorView!
+    @IBOutlet weak var registerDeviceLoading: UIActivityIndicatorView!
+    
+    
     @IBAction func onDataspinStarted(sender: AnyObject) {
         DataspinManager.Instance.Start(domainLabel.text, apiKey: apiKeyLabel.text, debugMode: debugSwitch.on)
     }
     
+    @IBAction func registerUser(sender: AnyObject) {
+        DataspinManager.Instance.RegisterUser(userName: nameLabel.text!, surname: surnameLabel.text!, email: emailLabel.text!, facebookId: facebookIdLabel.text!, gamecenterId: gamecenterIdLabel.text!, forceUpdate: false, callback: {
+            self.onUserRegistered()
+        })
+        registerUserLoading.startAnimating()
+    }
+    
+    @IBAction func registerDevice(sender: AnyObject) {
+        DataspinManager.Instance.RegisterDevice(applePushNotificationsToken: apnTokenLabel.text!, advertisingId: advertisingIdLabel.text!)
+    }
+    
+    func onUserRegistered() {
+        println("User registered!")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        //var dataspin : DataspinManager = DataspinManager(domainName: "hyperbees", apiKey: "keykey")
-        //dataspin.RegisterUser()
     }
     
     
