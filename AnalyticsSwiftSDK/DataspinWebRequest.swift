@@ -14,36 +14,48 @@ struct Properties {
     var dataspinMethod: DataspinMethod
     var parameters: [String: AnyObject]? = nil
     var optionalUrl: String? = nil
-    var response: JSON? = nil
+    var response: NSDictionary? = nil
     var error: NSError? = nil
 }
 
 public class DataspinWebRequest {
     var properties : Properties
     
-    init (httpMethod: HttpMethod, dsMethod: DataspinMethod, parameters: [String: AnyObject]? = nil, optionalUrl: String? = nil, callback: () -> Void) {
+    init (httpMethod: HttpMethod, dsMethod: DataspinMethod, parameters: [String: AnyObject]? = nil, optionalUrl: String? = nil) {
         properties = Properties(URL: NSURL(string: DataspinManager.Instance.config!.GetURL(DataspinMethod.RegisterUser))!, httpMethod: httpMethod, dataspinMethod: dsMethod, parameters: parameters, optionalUrl: optionalUrl, response: nil, error: nil)
         
         DataspinManager.Instance.Log("New request: "+self.ToString())
+    }
+    
+    public func Fire(completion: ((error: NSError?, response: NSDictionary?) -> Void)) {
+        DataspinManager.Instance.Log("Firing \(self.properties.dataspinMethod) request")
         
         let mutableURLRequest = NSMutableURLRequest(URL: properties.URL)
-        mutableURLRequest.HTTPMethod = httpMethod.rawValue
+        mutableURLRequest.HTTPMethod = self.properties.httpMethod.rawValue
         
         // Authorization header
         mutableURLRequest.setValue("Token \(DataspinManager.Instance.config!.ApiKey)", forHTTPHeaderField: "Authorization")
-        
-        var requestConvertible : URLRequestConvertible = ParameterEncoding.JSON.encode(mutableURLRequest, parameters: parameters).0
+        let requestConvertible : URLRequestConvertible = ParameterEncoding.JSON.encode(mutableURLRequest, parameters: self.properties.parameters).0
         
         request(requestConvertible).responseJSON{ (request, response, data, error) in
-            let dict = data as? NSDictionary
-            let json = JSON(data!)
-            print(json["uuid"])
-            let userName:JSON = json["uuid"]
-       }
+            let dict : NSDictionary = (data as? NSDictionary)!
+            self.properties.response = dict
+            self.properties.error = error
+            
+            var chuj : String = (dict["uuid"] as? String)!
+            
+            DataspinManager.Instance.Log("Request \(self.properties.dataspinMethod) completed")
+            completion(error: error, response: dict)
+        }
     }
     
     public func ToString() -> String {
         let stringData = "[Request] URL: \(properties.URL.absoluteString!), DSMethod: \(properties.dataspinMethod.rawValue), HttpMethod: \(properties.httpMethod.rawValue), \(properties.parameters?.debugDescription)"
+        return stringData
+    }
+    
+    public func Result() -> String {
+        let stringData = "[Request] Error: \(properties.error), Response: \(properties.response)"
         return stringData
     }
 }

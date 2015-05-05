@@ -210,6 +210,53 @@
                                     <rect key="frame" x="128" y="141" width="97" height="30"/>
                                 </variation>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ztF-H7-ifp">
+                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="257" y="66" width="51" height="31"/>
+                                </variation>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ForceUpdate?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-bT-KfS">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="226" y="92" width="110" height="21"/>
+                                </variation>
+                            </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hli-KD-Ff5">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvq-O8-SVv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Start Session">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerUser:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="SFr-cI-ekq"/>
+                                </connections>
+                            </button>
+                            <visualEffectView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-Qe-Vq4">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3yb-Dt-Wia">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="128" width="400" height="95"/>
+                                </variation>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-GK-XPU">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="108" width="265" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -225,6 +272,12 @@
                                 <exclude reference="cGh-aa-H0Z"/>
                                 <exclude reference="AUz-eE-3Xv"/>
                                 <exclude reference="E3R-HV-QtC"/>
+                                <exclude reference="ztF-H7-ifp"/>
+                                <exclude reference="f3V-bT-KfS"/>
+                                <exclude reference="hli-KD-Ff5"/>
+                                <exclude reference="dvq-O8-SVv"/>
+                                <exclude reference="VgX-Qe-Vq4"/>
+                                <exclude reference="aa9-GK-XPU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -240,6 +293,12 @@
                                 <include reference="cGh-aa-H0Z"/>
                                 <include reference="AUz-eE-3Xv"/>
                                 <include reference="E3R-HV-QtC"/>
+                                <include reference="ztF-H7-ifp"/>
+                                <include reference="f3V-bT-KfS"/>
+                                <exclude reference="hli-KD-Ff5"/>
+                                <exclude reference="dvq-O8-SVv"/>
+                                <include reference="VgX-Qe-Vq4"/>
+                                <include reference="aa9-GK-XPU"/>
                             </mask>
                         </variation>
                     </view>
@@ -248,11 +307,14 @@
                         <outlet property="apnTokenLabel" destination="cGh-aa-H0Z" id="T7b-G1-NMO"/>
                         <outlet property="emailLabel" destination="Vmh-ay-h2a" id="akm-Ae-wSi"/>
                         <outlet property="facebookIdLabel" destination="Tpp-vN-sVA" id="Lmv-L4-vpW"/>
+                        <outlet property="forceUpdateSwitch" destination="ztF-H7-ifp" id="sY5-sy-oz8"/>
                         <outlet property="gamecenterIdLabel" destination="onH-Fy-AQ1" id="R80-hp-6h0"/>
                         <outlet property="nameLabel" destination="Ica-C7-eEO" id="1uC-Rn-Buy"/>
+                        <outlet property="registerDeviceBlur" destination="VgX-Qe-Vq4" id="Ypz-E7-gEQ"/>
                         <outlet property="registerDeviceLoading" destination="AUz-eE-3Xv" id="QRI-mr-uCi"/>
                         <outlet property="registerUserLoading" destination="a2p-jM-ELT" id="iF3-IY-e7k"/>
                         <outlet property="surnameLabel" destination="T32-cz-XBA" id="8Jp-Yc-kCa"/>
+                        <outlet property="uuidLabel" destination="aa9-GK-XPU" id="AdX-aa-J53"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tuc-4S-kcI" userLabel="First Responder" sceneMemberID="firstResponder"/>

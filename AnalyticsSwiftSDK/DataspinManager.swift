@@ -31,6 +31,7 @@ public class DataspinManager {
     
     //! Logtag for easier debugging
     private var LogTag : String = "[Dataspin]";
+    private var ErrorLogTag : String = "[Dataspin Error]";
     
     //! Singleton
     public static let Instance = DataspinManager()
@@ -39,7 +40,10 @@ public class DataspinManager {
     var config: Config?
     
     //! User and Session variables
-    var userUUID : String?
+    public var userUUID : String?
+    var userRegistered : Bool?
+    var deviceRegistered : Bool?
+    var sessionId : Bool?
     
     init() {
         config = Config()
@@ -67,6 +71,11 @@ public class DataspinManager {
         if(config!.DebugMode) { println("\(LogTag): \(message)") }
     }
     
+     //! TODO: Extend to log into file and send as dump information
+    public func LogError(message: String) {
+        if(config!.DebugMode) { println("\(ErrorLogTag): \(message)") }
+    }
+    
     //! Use for Dataspin initialization at the game start
     public func Start(domainName: String, apiKey: String, debugMode:Bool) {
         config = Config(DomainName: domainName, ApiKey: apiKey, DebugMode: debugMode)
@@ -75,17 +84,14 @@ public class DataspinManager {
     }
     
     //! Used for registering an user, all parameters are optional, use Bool forceUpdate if you would like to update user data in dataspin.io database
-    public func RegisterUser(userName: String?=nil, surname: String?=nil, email: String?=nil, facebookId: String?=nil, gamecenterId: String?=nil, forceUpdate: Bool?=false, callback: ()->Void) {
+    public func RegisterUser(userName: String?=nil, surname: String?=nil, email: String?=nil, facebookId: String?=nil, gamecenterId: String?=nil, forceUpdate: Bool?=false, completion: ((error: NSError?) -> Void)) {
         
         // Check if user was already registered, if so, don't send request, fire onUserRegistered callback
         if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_uuid") as? [NSString] {
-            
-            //! TODO: Handle it in a nice way
             Log("User already registered! If you would like to update user data user forceUpdate: Bool parameter.")
-            callback()
+            completion(error: nil)
         }
         else {
-            
             let parameters = [
                 "name": userName!,
                 "surname": surname!,
@@ -94,30 +100,50 @@ public class DataspinManager {
                 "gamecenter_id": gamecenterId!
             ]
             
-            Log("Registering user")
+            Log("Registering user...")
             
-            //Consider storing request in variable
-            DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterUser, parameters: parameters)
+            let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterUser, parameters: parameters).Fire() {(error, response) in
+                if(error == nil) {
+                    self.userUUID = response!["uuid"] as? String
+                    self.Log("User succesfully registered, UUID: \(self.userUUID!)")
+                }
+                else {
+                    self.Log("Failed to register user")
+                }
+                
+                completion(error: error)
+            }
         }
     }
     
     //! Used for registering a device, must be called after RegisrerUser and before StartSession
     public func RegisterDevice(applePushNotificationsToken: String?=nil, advertisingId: String?=nil) {
         if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_device_uuid") as? [NSString] {
-            println("Device already registered!")
+            Log("Device already registered!")
         }
         else {
             let parameters = [
-            "end_user": userUUID!]
+            "end_user": userUUID!,
+            "uuid": UIDevice.currentDevice().identifierForVendor.UUIDString,
+            "platform": 2,
+            "device": GetDevice()
+            ]
+            
+            Log("XD")
         }
     }
     
-    private func onRequestExecuted(properties: Properties) {
-        if(properties.error != nil) {
-            
-        }
-        else {
-            
-        }
+    private func GetDevice() -> [String: AnyObject] {
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        
+        let device = [
+            "manufacturer": "Apple",
+            "model": UIDevice.currentDevice().model,
+            "screen_width": screenSize.width,
+            "screen_height": screenSize.height,
+            //"dpi":  UIScreen.mainScreen().
+        ]
+        
+        return device as! [String : AnyObject]
     }
 }

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
-            timestampString = "452431766.298155"
+            timestampString = "452522741.841303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "ToString()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,26 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
-            timestampString = "452431766.298155"
+            timestampString = "452522741.841303"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "init(httpMethod:dsMethod:parameters:optionalUrl:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
+            timestampString = "452523142.961701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "RegisterUser(userName:surname:email:facebookId:gamecenterId:forceUpdate:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +55,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
-            timestampString = "452431766.298155"
+            filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
+            timestampString = "452513338.519887"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "init(httpMethod:dsMethod:parameters:optionalUrl:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "RegisterUser(userName:surname:email:facebookId:gamecenterId:forceUpdate:completion:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
+            timestampString = "452524162.086962"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "RegisterDevice(applePushNotificationsToken:advertisingId:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -20,7 +20,6 @@
 		B53919E71AF6901D0034F7BD /* DataspinTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919E61AF6901D0034F7BD /* DataspinTestTests.swift */; };
 		B53919EE1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; };
 		B53919EF1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B53919F41AF699B90034F7BD /* logo_dark.png in Resources */ = {isa = PBXBuildFile; fileRef = B53919F31AF699B90034F7BD /* logo_dark.png */; };
 		B53919F61AF6A4C90034F7BD /* logo_dark kopia.png in Resources */ = {isa = PBXBuildFile; fileRef = B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */; };
 		B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F71AF6AE8B0034F7BD /* Alamofire.swift */; };
 		B53919FA1AF6B17E0034F7BD /* AlamofireSwifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */; };
@@ -84,7 +83,6 @@
 		B53919E01AF6901D0034F7BD /* DataspinTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataspinTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53919E51AF6901D0034F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53919E61AF6901D0034F7BD /* DataspinTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataspinTestTests.swift; sourceTree = "<group>"; };
-		B53919F31AF699B90034F7BD /* logo_dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_dark.png; sourceTree = "<group>"; };
 		B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_dark kopia.png"; sourceTree = "<group>"; };
 		B53919F71AF6AE8B0034F7BD /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireSwifty.swift; sourceTree = "<group>"; };
@@ -152,10 +150,10 @@
 			children = (
 				B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */,
 				B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */,
-				B5255AE61AF6828400C04990 /* DataspinManager.swift */,
 				B5255ACD1AF6827200C04990 /* Supporting Files */,
 				B53919F71AF6AE8B0034F7BD /* Alamofire.swift */,
 				B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */,
+				B5255AE61AF6828400C04990 /* DataspinManager.swift */,
 				B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */,
 			);
 			name = DataspinSDK;
@@ -190,9 +188,8 @@
 		B53919CD1AF6901D0034F7BD /* DataspinTest */ = {
 			isa = PBXGroup;
 			children = (
-				B53919F31AF699B90034F7BD /* logo_dark.png */,
-				B53919D01AF6901D0034F7BD /* AppDelegate.swift */,
 				B53919D21AF6901D0034F7BD /* ViewController.swift */,
+				B53919D01AF6901D0034F7BD /* AppDelegate.swift */,
 				B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */,
 				B53919D41AF6901D0034F7BD /* Main.storyboard */,
 				B53919D71AF6901D0034F7BD /* Images.xcassets */,
@@ -380,7 +377,6 @@
 			files = (
 				B53919D61AF6901D0034F7BD /* Main.storyboard in Resources */,
 				B53919DB1AF6901D0034F7BD /* LaunchScreen.xib in Resources */,
-				B53919F41AF699B90034F7BD /* logo_dark.png in Resources */,
 				B53919F61AF6A4C90034F7BD /* logo_dark kopia.png in Resources */,
 				B53919D81AF6901D0034F7BD /* Images.xcassets in Resources */,
 			);
