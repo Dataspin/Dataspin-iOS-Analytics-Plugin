@@ -22,13 +22,13 @@ public class DataspinWebRequest {
     var properties : Properties
     
     init (httpMethod: HttpMethod, dsMethod: DataspinMethod, parameters: [String: AnyObject]? = nil, optionalUrl: String? = nil) {
-        properties = Properties(URL: NSURL(string: DataspinManager.Instance.config!.GetURL(DataspinMethod.RegisterUser))!, httpMethod: httpMethod, dataspinMethod: dsMethod, parameters: parameters, optionalUrl: optionalUrl, response: nil, error: nil)
+        properties = Properties(URL: NSURL(string: DataspinManager.Instance.config!.GetURL(dsMethod))!, httpMethod: httpMethod, dataspinMethod: dsMethod, parameters: parameters, optionalUrl: optionalUrl, response: nil, error: nil)
         
         DataspinManager.Instance.Log("New request: "+self.ToString())
     }
     
     public func Fire(completion: ((error: NSError?, response: NSDictionary?) -> Void)) {
-        DataspinManager.Instance.Log("Firing \(self.properties.dataspinMethod) request")
+        DataspinManager.Instance.Log("Firing \(self.properties.dataspinMethod.rawValue) request")
         
         let mutableURLRequest = NSMutableURLRequest(URL: properties.URL)
         mutableURLRequest.HTTPMethod = self.properties.httpMethod.rawValue
@@ -38,14 +38,14 @@ public class DataspinWebRequest {
         let requestConvertible : URLRequestConvertible = ParameterEncoding.JSON.encode(mutableURLRequest, parameters: self.properties.parameters).0
         
         request(requestConvertible).responseJSON{ (request, response, data, error) in
+            println("Error: \(error), Response: \(response)")
             let dict : NSDictionary = (data as? NSDictionary)!
             self.properties.response = dict
             self.properties.error = error
             
-            var chuj : String = (dict["uuid"] as? String)!
-            
-            DataspinManager.Instance.Log("Request \(self.properties.dataspinMethod) completed")
+            DataspinManager.Instance.Log("Request \(self.properties.dataspinMethod.rawValue) completed")
             completion(error: error, response: dict)
+            
         }
     }
     
