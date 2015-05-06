@@ -23,15 +23,15 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B53919CB1AF6901D0034F7BD"
-               BuildableName = "DataspinTest.app"
-               BlueprintName = "DataspinTest"
-               ReferencedContainer = "container:DataspinSDK.xcodeproj">
+               BlueprintIdentifier = "B53919DF1AF6901D0034F7BD"
+               BuildableName = "DataspinTestTests.xctest"
+               BlueprintName = "DataspinTestTests"
+               ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,6 +42,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B53919DF1AF6901D0034F7BD"
+               BuildableName = "DataspinTestTests.xctest"
+               BlueprintName = "DataspinTestTests"
+               ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -49,7 +59,7 @@
             BlueprintIdentifier = "B53919CB1AF6901D0034F7BD"
             BuildableName = "DataspinTest.app"
             BlueprintName = "DataspinTest"
-            ReferencedContainer = "container:DataspinSDK.xcodeproj">
+            ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -69,7 +79,7 @@
             BlueprintIdentifier = "B53919CB1AF6901D0034F7BD"
             BuildableName = "DataspinTest.app"
             BlueprintName = "DataspinTest"
-            ReferencedContainer = "container:DataspinSDK.xcodeproj">
+            ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

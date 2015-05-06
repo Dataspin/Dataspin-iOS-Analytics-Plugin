@@ -17,7 +17,21 @@
                BlueprintIdentifier = "B5255AC91AF6827200C04990"
                BuildableName = "AnalyticsSwiftSDK.framework"
                BlueprintName = "AnalyticsSwiftSDK"
-               ReferencedContainer = "container:DataspinSDK.xcodeproj">
+               ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B5255AD41AF6827200C04990"
+               BuildableName = "AnalyticsSwiftSDKTests.xctest"
+               BlueprintName = "AnalyticsSwiftSDKTests"
+               ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,6 +42,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B5255AD41AF6827200C04990"
+               BuildableName = "AnalyticsSwiftSDKTests.xctest"
+               BlueprintName = "AnalyticsSwiftSDKTests"
+               ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
@@ -35,7 +59,7 @@
             BlueprintIdentifier = "B5255AC91AF6827200C04990"
             BuildableName = "AnalyticsSwiftSDK.framework"
             BlueprintName = "AnalyticsSwiftSDK"
-            ReferencedContainer = "container:DataspinSDK.xcodeproj">
+            ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -54,7 +78,7 @@
             BlueprintIdentifier = "B5255AC91AF6827200C04990"
             BuildableName = "AnalyticsSwiftSDK.framework"
             BlueprintName = "AnalyticsSwiftSDK"
-            ReferencedContainer = "container:DataspinSDK.xcodeproj">
+            ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -72,7 +96,7 @@
             BlueprintIdentifier = "B5255AC91AF6827200C04990"
             BuildableName = "AnalyticsSwiftSDK.framework"
             BlueprintName = "AnalyticsSwiftSDK"
-            ReferencedContainer = "container:DataspinSDK.xcodeproj">
+            ReferencedContainer = "container:AnalyticsSwiftSDK.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
@@ -81,7 +105,6 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
-      customArchiveName = "DataspinSDK"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

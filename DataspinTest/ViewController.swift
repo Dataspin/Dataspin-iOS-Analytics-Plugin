@@ -9,7 +9,7 @@
 import UIKit
 import AnalyticsSwiftSDK
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var domainLabel: UITextField!
     @IBOutlet weak var apiKeyLabel: UITextField!
@@ -29,43 +29,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var registerUserLoading: UIActivityIndicatorView!
     @IBOutlet weak var registerDeviceLoading: UIActivityIndicatorView!
-    @IBOutlet weak var sessionStartLoading: UIActivityIndicatorView!
+
     
-    @IBOutlet weak var startSessionBlur: UIVisualEffectView!
     @IBOutlet weak var registerDeviceBlur: UIVisualEffectView!
-    
-    @IBOutlet weak var itemsTableView: UITableView!
-    
-    let textCellIdentifier = "TextCell"
-    
-    let swiftBlogs = ["Ray Wenderlich", "NSHipster", "iOS Developer Tips", "Jameson Quave", "Natasha The Robot", "Coding Explorer", "That Thing In Swift", "Andrew Bancroft", "iAchieved.it", "Airspeed Velocity"]
-    
-    // MARK:  UITextFieldDelegate Methods
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return swiftBlogs.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        println("Index path \(indexPath.row)")
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
-        
-        cell.textLabel?.text = swiftBlogs[indexPath.row]
-        
-        return cell
-    }
-    
-    // MARK:  UITableViewDelegate Methods
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        let row = indexPath.row
-        println(swiftBlogs[row])
-    }
-    // -- END TABLE --
     
     
     @IBAction func onDataspinStarted(sender: AnyObject) {
@@ -89,32 +55,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func registerDevice(sender: AnyObject) {
-        DataspinManager.Instance.RegisterDevice(applePushNotificationsToken: apnTokenLabel.text!, advertisingId: advertisingIdLabel.text!) { (error) in
-            if(error == nil) {
-                
-            }
-            else {
-                
-            }
-        }
+        DataspinManager.Instance.RegisterDevice(applePushNotificationsToken: apnTokenLabel.text!, advertisingId: advertisingIdLabel.text!)
     }
     
-    @IBAction func startSession(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func endSession(sender: AnyObject) {
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if(itemsTableView != nil) {
-            itemsTableView.delegate = self
-            itemsTableView.dataSource = self
-        }
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -124,5 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
 }
 

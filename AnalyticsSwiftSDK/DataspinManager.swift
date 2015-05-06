@@ -41,10 +41,9 @@ public class DataspinManager {
     
     //! User and Session variables
     public var userUUID : String?
-    public var deviceUUID : String?
     var userRegistered : Bool?
     var deviceRegistered : Bool?
-    var sessionId : Int?
+    var sessionId : Bool?
     
     init() {
         config = Config()
@@ -106,7 +105,6 @@ public class DataspinManager {
             let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterUser, parameters: parameters).Fire() {(error, response) in
                 if(error == nil) {
                     self.userUUID = response!["uuid"] as? String
-                    self.userRegistered = true
                     self.Log("User succesfully registered, UUID: \(self.userUUID!)")
                 }
                 else {
@@ -119,36 +117,19 @@ public class DataspinManager {
     }
     
     //! Used for registering a device, must be called after RegisrerUser and before StartSession
-    public func RegisterDevice(applePushNotificationsToken: String?=nil, advertisingId: String?=nil,completion: ((error: NSError?) -> Void)) {
+    public func RegisterDevice(applePushNotificationsToken: String?=nil, advertisingId: String?=nil) {
         if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_device_uuid") as? [NSString] {
             Log("Device already registered!")
         }
         else {
-            if(userRegistered!) {
-                let parameters = [
-                "end_user": userUUID!,
-                "uuid": UIDevice.currentDevice().identifierForVendor.UUIDString,
-                "platform": 2,
-                "device": GetDevice()
-                ]
-                
-                Log("Registering device...")
-                
-                let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterDevice, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
-                    if(error == nil) {
-                        //self.userUUID = response!["uuid"] as? String
-                        self.Log("Device succesfully registered, UUID: \(self.userUUID!)")
-                    }
-                    else {
-                        self.Log("Failed to register device")
-                    }
-                    
-                    completion(error: error)
-                }
-            }
-            else {
-                Log("Before calling RegisterDevice call RegisterUser first!")
-            }
+            let parameters = [
+            "end_user": userUUID!,
+            "uuid": UIDevice.currentDevice().identifierForVendor.UUIDString,
+            "platform": 2,
+            "device": GetDevice()
+            ]
+            
+            Log("XD")
         }
     }
     
@@ -160,7 +141,7 @@ public class DataspinManager {
             "model": UIDevice.currentDevice().model,
             "screen_width": screenSize.width,
             "screen_height": screenSize.height,
-            "dpi":  401
+            //"dpi":  UIScreen.mainScreen().
         ]
         
         return device as! [String : AnyObject]

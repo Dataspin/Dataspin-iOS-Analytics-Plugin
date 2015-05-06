@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F088E43D-279C-41EB-A130-28FAED1EFB27</string>
+	<string>CF310B9A-4F20-434F-BB90-53BCFF2AB9C4</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>AnalyticsSwiftSDK</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CA0FAC77452AF743913BC38FE42A03F432B5C4D4</key>
 		<string>https://github.com/Precel/iOS-Dataspin-Analytics-SDK.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DataspinSwiftSDK.xcodeproj/project.xcworkspace</string>
+	<string>AnalyticsSwiftSDK.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>CA0FAC77452AF743913BC38FE42A03F432B5C4D4</key>
