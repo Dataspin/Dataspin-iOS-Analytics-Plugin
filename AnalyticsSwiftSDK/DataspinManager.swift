@@ -41,12 +41,16 @@ public class DataspinManager {
     
     //! User and Session variables
     public var userUUID : String?
+    public var deviceUUID : String?
     var userRegistered : Bool?
     var deviceRegistered : Bool?
-    var sessionId : Bool?
+    var sessionId : Int?
     
     init() {
         config = Config()
+        userRegistered = false;
+        deviceRegistered = false;
+        sessionId = -1;
     }
     
     //! Configuration settings
@@ -55,6 +59,8 @@ public class DataspinManager {
         internal var DomainName = "hyperbees"
         //! Datapin iOS Test App secret key
         internal var ApiKey = "22d8f5c1fb0377599084f104682b4a24e47cfc39"
+        //! App Version
+        internal var AppVersion = "1.0"
         //! Determines whether we should log information about what's going on. Should be disabled in production builds
         internal var DebugMode = true
         
@@ -71,14 +77,14 @@ public class DataspinManager {
         if(config!.DebugMode) { println("\(LogTag): \(message)") }
     }
     
-     //! TODO: Extend to log into file and send as dump information
+    //! TODO: Extend to log into file and send as dump information
     public func LogError(message: String) {
         if(config!.DebugMode) { println("\(ErrorLogTag): \(message)") }
     }
     
     //! Use for Dataspin initialization at the game start
-    public func Start(domainName: String, apiKey: String, debugMode:Bool) {
-        config = Config(DomainName: domainName, ApiKey: apiKey, DebugMode: debugMode)
+    public func Start(domainName: String, apiKey: String, debugMode:Bool, appVersion: String) {
+        config = Config(DomainName: domainName, ApiKey: apiKey, AppVersion: appVersion, DebugMode: debugMode)
         
         Log("DataspinSDK started with \(self.config!.DomainName) domain and key \(self.config!.ApiKey), Debug: \(debugMode)")
     }
@@ -105,6 +111,7 @@ public class DataspinManager {
             let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterUser, parameters: parameters).Fire() {(error, response) in
                 if(error == nil) {
                     self.userUUID = response!["uuid"] as? String
+                    self.userRegistered = true
                     self.Log("User succesfully registered, UUID: \(self.userUUID!)")
                 }
                 else {
@@ -117,19 +124,61 @@ public class DataspinManager {
     }
     
     //! Used for registering a device, must be called after RegisrerUser and before StartSession
-    public func RegisterDevice(applePushNotificationsToken: String?=nil, advertisingId: String?=nil) {
+    public func RegisterDevice(applePushNotificationsToken: String?=nil, advertisingId: String?=nil,completion: ((error: NSError?) -> Void)) {
         if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_device_uuid") as? [NSString] {
             Log("Device already registered!")
         }
         else {
+            if(userRegistered!) {
+                let parameters = [
+                    "end_user": userUUID!,
+                    "uuid": UIDevice.currentDevice().identifierForVendor.UUIDString.md5(),
+                    "platform": 2,
+                    "device": GetDevice()
+                ]
+                
+                Log("Registering device...")
+                
+                let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterDevice, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
+                    if(error == nil) {
+                        self.deviceUUID = response!["uuid"] as? String
+                        self.deviceRegistered = true
+                        self.Log("Device succesfully registered, UUID: \(self.deviceUUID!)")
+                    }
+                    else {
+                        self.Log("Failed to register device")
+                    }
+                    
+                    completion(error: error)
+                }
+            }
+            else {
+                Log("Before calling RegisterDevice call RegisterUser first!")
+            }
+        }
+    }
+    
+    public func StartSession(completion: ((error: NSError?) -> Void)) {
+        if(deviceRegistered!) {
             let parameters = [
-            "end_user": userUUID!,
-            "uuid": UIDevice.currentDevice().identifierForVendor.UUIDString,
-            "platform": 2,
-            "device": GetDevice()
+                "end_user_device": self.deviceUUID!,
+                "app_version": self.config!.AppVersion,
+                "connectivity_type": 1
             ]
             
-            Log("XD")
+            Log("Registering device...")
+            
+            let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.StartSession, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
+                if(error == nil) {
+                    self.sessionId = response!["session_id"] as? Int
+                    self.Log("Session started!")
+                }
+                else {
+                    self.Log("Failed to start session!")
+                }
+                
+                completion(error: error)
+            }
         }
     }
     
@@ -141,7 +190,7 @@ public class DataspinManager {
             "model": UIDevice.currentDevice().model,
             "screen_width": screenSize.width,
             "screen_height": screenSize.height,
-            //"dpi":  UIScreen.mainScreen().
+            "dpi":  401
         ]
         
         return device as! [String : AnyObject]

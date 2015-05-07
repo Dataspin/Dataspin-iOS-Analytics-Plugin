@@ -16,21 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-52-7eZ">
-                                <rect key="frame" x="134" y="106" width="51" height="31"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="231" y="283" width="51" height="31"/>
-                                </variation>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Debug Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF0-gs-DN3">
-                                <rect key="frame" x="16" y="111" width="124" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.19860716540404044" green="0.19860716540404044" blue="0.19860716540404044" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="113" y="288" width="124" height="21"/>
-                                </variation>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_dark kopia.png" translatesAutoresizingMaskIntoConstraints="NO" id="1yg-Yi-KqC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -53,19 +38,6 @@
                                     <rect key="frame" x="100" y="212" width="200" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-bs-GWm">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Start Dataspin">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="113" y="322" width="167" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onDataspinStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xb-Kh-1d2"/>
-                                    <segue destination="mwE-1h-kKZ" kind="show" id="er6-NB-ANd"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="22d8f5c1fb0377599084f104682b4a24e47cfc39" borderStyle="roundedRect" placeholder="ApiKey" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E3c-hs-TKc">
                                 <rect key="frame" x="0.0" y="73" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -77,11 +49,54 @@
                                     <rect key="frame" x="100" y="250" width="200" height="30"/>
                                 </variation>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.0" borderStyle="roundedRect" placeholder="Version" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a5c-vq-VaB">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="288" width="200" height="30"/>
+                                </variation>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-52-7eZ">
+                                <rect key="frame" x="134" y="106" width="51" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="231" y="283" width="51" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="235" y="365" width="51" height="31"/>
+                                </variation>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Debug Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EF0-gs-DN3">
+                                <rect key="frame" x="16" y="111" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.19860716540404044" green="0.19860716540404044" blue="0.19860716540404044" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="113" y="288" width="124" height="21"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="117" y="370" width="124" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-bs-GWm">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Start Dataspin">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="117" y="404" width="167" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onDataspinStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xb-Kh-1d2"/>
+                                    <segue destination="mwE-1h-kKZ" kind="show" id="er6-NB-ANd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="1yg-Yi-KqC"/>
+                                <exclude reference="a5c-vq-VaB"/>
                                 <exclude reference="iFq-bs-GWm"/>
                             </mask>
                         </variation>
@@ -92,12 +107,14 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="a5c-vq-VaB"/>
                                 <include reference="iFq-bs-GWm"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="apiKeyLabel" destination="E3c-hs-TKc" id="rVk-zt-r7V"/>
+                        <outlet property="appVersionLabel" destination="a5c-vq-VaB" id="wvT-kz-Pnx"/>
                         <outlet property="debugSwitch" destination="k2y-52-7eZ" id="D5R-TW-O48"/>
                         <outlet property="domainLabel" destination="Eju-gE-MHL" id="a1f-gM-JC0"/>
                     </connections>
@@ -225,18 +242,6 @@
                                     <rect key="frame" x="226" y="92" width="110" height="21"/>
                                 </variation>
                             </label>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hli-KD-Ff5">
-                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvq-O8-SVv">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Start Session">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="registerUser:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="SFr-cI-ekq"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-Qe-Vq4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3yb-Dt-Wia">
@@ -244,9 +249,6 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 </view>
                                 <blurEffect style="light"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="128" width="400" height="95"/>
-                                </variation>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-GK-XPU">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -255,6 +257,123 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="128" y="108" width="265" height="21"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-vY-956">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Dataspin Log: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="722" width="400" height="78"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8en-0x-qwN">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Start Session">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="23" y="215" width="97" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="startSession:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="6XI-kZ-g3c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKY-mF-4ch">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="EndSession">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="215" width="97" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="endSession:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="Kx7-Sh-dNO"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UIL-BS-vdX">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="233" y="220" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="20" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="91L-B6-eWu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" rowHeight="15" id="cVQ-JK-7Fc">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cVQ-JK-7Fc" id="NZ0-c7-xo7">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="156" y="267" width="220" height="119"/>
+                                </variation>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZg-RR-1w1">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Get Items">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="18" y="281" width="109" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="getItems:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="QvD-jD-SuR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRd-8p-MUa">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Purchase Item">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="23" y="319" width="99" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="purchaseItem:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="4zn-a1-b56"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="O3a-Q6-TgE">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="286" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-Vt-8av">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="128" y="324" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-t0-hm1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cOe-zK-pWZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Item: Ad_remover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI2-6w-h1B">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="-1" y="342" width="157" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3P-dg-A4b">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="139" y="181" width="245" height="21"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -274,10 +393,20 @@
                                 <exclude reference="E3R-HV-QtC"/>
                                 <exclude reference="ztF-H7-ifp"/>
                                 <exclude reference="f3V-bT-KfS"/>
-                                <exclude reference="hli-KD-Ff5"/>
-                                <exclude reference="dvq-O8-SVv"/>
                                 <exclude reference="VgX-Qe-Vq4"/>
                                 <exclude reference="aa9-GK-XPU"/>
+                                <exclude reference="EkT-vY-956"/>
+                                <exclude reference="8en-0x-qwN"/>
+                                <exclude reference="iKY-mF-4ch"/>
+                                <exclude reference="UIL-BS-vdX"/>
+                                <exclude reference="91L-B6-eWu"/>
+                                <exclude reference="JZg-RR-1w1"/>
+                                <exclude reference="YRd-8p-MUa"/>
+                                <exclude reference="O3a-Q6-TgE"/>
+                                <exclude reference="1Kc-Vt-8av"/>
+                                <exclude reference="6WX-t0-hm1"/>
+                                <exclude reference="JI2-6w-h1B"/>
+                                <exclude reference="x3P-dg-A4b"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -295,10 +424,20 @@
                                 <include reference="E3R-HV-QtC"/>
                                 <include reference="ztF-H7-ifp"/>
                                 <include reference="f3V-bT-KfS"/>
-                                <exclude reference="hli-KD-Ff5"/>
-                                <exclude reference="dvq-O8-SVv"/>
-                                <include reference="VgX-Qe-Vq4"/>
+                                <exclude reference="VgX-Qe-Vq4"/>
                                 <include reference="aa9-GK-XPU"/>
+                                <include reference="EkT-vY-956"/>
+                                <include reference="8en-0x-qwN"/>
+                                <include reference="iKY-mF-4ch"/>
+                                <include reference="UIL-BS-vdX"/>
+                                <include reference="91L-B6-eWu"/>
+                                <include reference="JZg-RR-1w1"/>
+                                <include reference="YRd-8p-MUa"/>
+                                <include reference="O3a-Q6-TgE"/>
+                                <include reference="1Kc-Vt-8av"/>
+                                <exclude reference="6WX-t0-hm1"/>
+                                <include reference="JI2-6w-h1B"/>
+                                <include reference="x3P-dg-A4b"/>
                             </mask>
                         </variation>
                     </view>
@@ -306,13 +445,17 @@
                         <outlet property="advertisingIdLabel" destination="E3R-HV-QtC" id="nCg-td-Erg"/>
                         <outlet property="apnTokenLabel" destination="cGh-aa-H0Z" id="T7b-G1-NMO"/>
                         <outlet property="emailLabel" destination="Vmh-ay-h2a" id="akm-Ae-wSi"/>
+                        <outlet property="endDeviceUUIDLabel" destination="x3P-dg-A4b" id="F3w-K2-pbj"/>
                         <outlet property="facebookIdLabel" destination="Tpp-vN-sVA" id="Lmv-L4-vpW"/>
                         <outlet property="forceUpdateSwitch" destination="ztF-H7-ifp" id="sY5-sy-oz8"/>
                         <outlet property="gamecenterIdLabel" destination="onH-Fy-AQ1" id="R80-hp-6h0"/>
+                        <outlet property="itemsTableView" destination="91L-B6-eWu" id="5a3-7j-GKQ"/>
                         <outlet property="nameLabel" destination="Ica-C7-eEO" id="1uC-Rn-Buy"/>
                         <outlet property="registerDeviceBlur" destination="VgX-Qe-Vq4" id="Ypz-E7-gEQ"/>
                         <outlet property="registerDeviceLoading" destination="AUz-eE-3Xv" id="QRI-mr-uCi"/>
                         <outlet property="registerUserLoading" destination="a2p-jM-ELT" id="iF3-IY-e7k"/>
+                        <outlet property="sessionStartLoading" destination="UIL-BS-vdX" id="m1p-b0-PGF"/>
+                        <outlet property="startSessionBlur" destination="6WX-t0-hm1" id="bvV-EH-brU"/>
                         <outlet property="surnameLabel" destination="T32-cz-XBA" id="8Jp-Yc-kCa"/>
                         <outlet property="uuidLabel" destination="aa9-GK-XPU" id="AdX-aa-J53"/>
                     </connections>

@@ -12,6 +12,7 @@
 		B5255ADD1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */; };
 		B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255AE61AF6828400C04990 /* DataspinManager.swift */; };
 		B5255B301AF6887B00C04990 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */; };
+		B533FBD11AFAB9C800C84B3D /* Swift-MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B533FBD01AFAB9C800C84B3D /* Swift-MD5.swift */; };
 		B53919D11AF6901D0034F7BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919D01AF6901D0034F7BD /* AppDelegate.swift */; };
 		B53919D31AF6901D0034F7BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919D21AF6901D0034F7BD /* ViewController.swift */; };
 		B53919D61AF6901D0034F7BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53919D41AF6901D0034F7BD /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSwiftSDKTests.swift; sourceTree = "<group>"; };
 		B5255AE61AF6828400C04990 /* DataspinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataspinManager.swift; sourceTree = "<group>"; };
 		B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "../../../Downloads/SwiftyJSON-2.1.2/Source/SwiftyJSON.swift"; sourceTree = "<group>"; };
+		B533FBD01AFAB9C800C84B3D /* Swift-MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift-MD5.swift"; sourceTree = "<group>"; };
 		B53919CC1AF6901D0034F7BD /* DataspinTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataspinTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53919CF1AF6901D0034F7BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53919D01AF6901D0034F7BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */,
 				B5255AE61AF6828400C04990 /* DataspinManager.swift */,
 				B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */,
+				B533FBD01AFAB9C800C84B3D /* Swift-MD5.swift */,
 			);
 			name = DataspinSDK;
 			path = AnalyticsSwiftSDK;
@@ -322,6 +325,7 @@
 				TargetAttributes = {
 					B5255AC91AF6827200C04990 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = V53VRV7GEP;
 					};
 					B5255AD41AF6827200C04990 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -396,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B533FBD11AFAB9C800C84B3D /* Swift-MD5.swift in Sources */,
 				B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */,
 				B5989A5E1AF75CAB00090973 /* DataspinWebRequest.swift in Sources */,
 				B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */,
@@ -510,6 +515,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -551,6 +557,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -561,17 +568,22 @@
 		B5255AE11AF6827200C04990 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AnalyticsSwiftSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "";
+				MODULEMAP_PRIVATE_FILE = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -579,17 +591,22 @@
 		B5255AE21AF6827200C04990 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AnalyticsSwiftSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "";
+				MODULEMAP_PRIVATE_FILE = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 			};
 			name = Release;
 		};
@@ -607,6 +624,7 @@
 				INFOPLIST_FILE = AnalyticsSwiftSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 			};
 			name = Debug;
 		};
@@ -620,6 +638,7 @@
 				INFOPLIST_FILE = AnalyticsSwiftSDKTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 			};
 			name = Release;
 		};
@@ -635,6 +654,7 @@
 				INFOPLIST_FILE = DataspinTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 			};
 			name = Debug;
 		};
@@ -646,6 +666,7 @@
 				INFOPLIST_FILE = DataspinTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 			};
 			name = Release;
 		};
@@ -664,6 +685,7 @@
 				INFOPLIST_FILE = DataspinTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataspinTest.app/DataspinTest";
 			};
 			name = Debug;
@@ -679,6 +701,7 @@
 				INFOPLIST_FILE = DataspinTestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = /Users/rafal/CryptoModule/;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataspinTest.app/DataspinTest";
 			};
 			name = Release;
