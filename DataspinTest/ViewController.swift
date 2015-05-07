@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var endDeviceUUIDLabel: UILabel!
     @IBOutlet weak var uuidLabel: UILabel!
+    @IBOutlet weak var sessionId: UILabel!
     
     @IBOutlet weak var debugSwitch: UISwitch!
     @IBOutlet weak var forceUpdateSwitch: UISwitch!
@@ -79,7 +80,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         DataspinManager.Instance.RegisterUser(userName: nameLabel.text!, surname: surnameLabel.text!, email: emailLabel.text!, facebookId: facebookIdLabel.text!, gamecenterId: gamecenterIdLabel.text!, forceUpdate: forceUpdateSwitch.on) { (error) in
             if(error == nil) {
                 // User registered succesfully. Your code goes here.
-                self.registerUserLoading.stopAnimating()
                 self.registerDeviceBlur.hidden = true
                 self.uuidLabel.text = "UUID: \(DataspinManager.Instance.userUUID!)"
             }
@@ -87,10 +87,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 // Error while registering user
                 
             }
+            self.registerUserLoading.stopAnimating()
         }
     }
     
     @IBAction func registerDevice(sender: AnyObject) {
+        registerDeviceLoading.startAnimating()
         DataspinManager.Instance.RegisterDevice(applePushNotificationsToken: apnTokenLabel.text!, advertisingId: advertisingIdLabel.text!) { (error) in
             if(error == nil) {
                 self.endDeviceUUIDLabel.text = "End_device: \(DataspinManager.Instance.deviceUUID!)"
@@ -98,17 +100,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             else {
                 
             }
+            self.registerDeviceLoading.stopAnimating()
         }
     }
     
     @IBAction func startSession(sender: AnyObject) {
+        sessionStartLoading.startAnimating()
         DataspinManager.Instance.StartSession() { (error) in
             if(error == nil) {
-                
+                self.sessionId.text = "Session ID: \(DataspinManager.Instance.sessionId!)"
             }
             else {
                 
             }
+            
+            self.sessionStartLoading.stopAnimating()
         }
     }
     

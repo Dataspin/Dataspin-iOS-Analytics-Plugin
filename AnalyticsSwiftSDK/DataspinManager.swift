@@ -42,9 +42,9 @@ public class DataspinManager {
     //! User and Session variables
     public var userUUID : String?
     public var deviceUUID : String?
-    var userRegistered : Bool?
-    var deviceRegistered : Bool?
-    var sessionId : Int?
+    public var userRegistered : Bool?
+    public var deviceRegistered : Bool?
+    public var sessionId : Int?
     
     init() {
         config = Config()
@@ -170,7 +170,7 @@ public class DataspinManager {
             
             let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.StartSession, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
                 if(error == nil) {
-                    self.sessionId = response!["session_id"] as? Int
+                    self.sessionId = response!["id"] as? Int
                     self.Log("Session started!")
                 }
                 else {
