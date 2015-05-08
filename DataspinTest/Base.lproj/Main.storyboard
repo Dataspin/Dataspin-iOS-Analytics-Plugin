@@ -171,7 +171,7 @@
                                     <rect key="frame" x="233" y="29" width="97" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="facebook_id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tpp-vN-sVA">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Facebook_id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tpp-vN-sVA">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -179,7 +179,7 @@
                                     <rect key="frame" x="23" y="67" width="97" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="gamecenter_id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="onH-Fy-AQ1">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gamecenter_id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="onH-Fy-AQ1">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -311,7 +311,7 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="156" y="267" width="220" height="119"/>
+                                    <rect key="frame" x="157" y="303" width="220" height="119"/>
                                 </variation>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZg-RR-1w1">
@@ -320,7 +320,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="18" y="281" width="109" height="30"/>
+                                    <rect key="frame" x="19" y="317" width="109" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="getItems:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="QvD-jD-SuR"/>
@@ -332,7 +332,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="23" y="319" width="99" height="30"/>
+                                    <rect key="frame" x="24" y="355" width="99" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="purchaseItem:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="4zn-a1-b56"/>
@@ -341,13 +341,13 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="O3a-Q6-TgE">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="286" width="20" height="20"/>
+                                    <rect key="frame" x="129" y="322" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1Kc-Vt-8av">
                                 <rect key="frame" x="-10" y="-10" width="20" height="20"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="128" y="324" width="20" height="20"/>
+                                    <rect key="frame" x="129" y="360" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-t0-hm1">
@@ -364,7 +364,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-1" y="342" width="157" height="21"/>
+                                    <rect key="frame" x="0.0" y="378" width="157" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3P-dg-A4b">
@@ -385,6 +385,52 @@
                                     <rect key="frame" x="233" y="219" width="151" height="21"/>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iui-pa-gx7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Register Event">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="27" y="253" width="100" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="registerEvent:" destination="mwE-1h-kKZ" eventType="touchUpInside" id="9Ew-ZT-YPc"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event_Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpM-fA-R1k">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="253" width="90" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Data" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKl-RQ-hUv">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="275" y="253" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="bxy-ri-yvn">
+                                <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="143" y="258" width="20" height="20"/>
+                                </variation>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="20" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CST-5J-j9k">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextCell" rowHeight="15" id="8az-hA-wb2">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8az-hA-wb2" id="uBC-Jm-yfs">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -417,6 +463,11 @@
                                 <exclude reference="JI2-6w-h1B"/>
                                 <exclude reference="x3P-dg-A4b"/>
                                 <exclude reference="vZf-Gm-Ne4"/>
+                                <exclude reference="iui-pa-gx7"/>
+                                <exclude reference="EpM-fA-R1k"/>
+                                <exclude reference="FKl-RQ-hUv"/>
+                                <exclude reference="bxy-ri-yvn"/>
+                                <exclude reference="CST-5J-j9k"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -449,19 +500,30 @@
                                 <include reference="JI2-6w-h1B"/>
                                 <include reference="x3P-dg-A4b"/>
                                 <include reference="vZf-Gm-Ne4"/>
+                                <include reference="iui-pa-gx7"/>
+                                <include reference="EpM-fA-R1k"/>
+                                <include reference="FKl-RQ-hUv"/>
+                                <include reference="bxy-ri-yvn"/>
+                                <exclude reference="CST-5J-j9k"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="advertisingIdLabel" destination="E3R-HV-QtC" id="nCg-td-Erg"/>
                         <outlet property="apnTokenLabel" destination="cGh-aa-H0Z" id="T7b-G1-NMO"/>
+                        <outlet property="currentItemLabel" destination="JI2-6w-h1B" id="DF5-Xd-DWB"/>
                         <outlet property="emailLabel" destination="Vmh-ay-h2a" id="akm-Ae-wSi"/>
                         <outlet property="endDeviceUUIDLabel" destination="x3P-dg-A4b" id="F3w-K2-pbj"/>
+                        <outlet property="eventExtraData" destination="FKl-RQ-hUv" id="Ga8-pq-Zji"/>
+                        <outlet property="eventIdLabel" destination="EpM-fA-R1k" id="iTm-2X-pPp"/>
+                        <outlet property="eventRegisterLoading" destination="bxy-ri-yvn" id="UU9-Uj-weR"/>
                         <outlet property="facebookIdLabel" destination="Tpp-vN-sVA" id="Lmv-L4-vpW"/>
                         <outlet property="forceUpdateSwitch" destination="ztF-H7-ifp" id="sY5-sy-oz8"/>
                         <outlet property="gamecenterIdLabel" destination="onH-Fy-AQ1" id="R80-hp-6h0"/>
+                        <outlet property="getItemsLoading" destination="O3a-Q6-TgE" id="qIv-kN-h8r"/>
                         <outlet property="itemsTableView" destination="91L-B6-eWu" id="5a3-7j-GKQ"/>
                         <outlet property="nameLabel" destination="Ica-C7-eEO" id="1uC-Rn-Buy"/>
+                        <outlet property="purchaseItemLoading" destination="1Kc-Vt-8av" id="3mg-ux-oew"/>
                         <outlet property="registerDeviceBlur" destination="VgX-Qe-Vq4" id="Ypz-E7-gEQ"/>
                         <outlet property="registerDeviceLoading" destination="AUz-eE-3Xv" id="QRI-mr-uCi"/>
                         <outlet property="registerUserLoading" destination="a2p-jM-ELT" id="iF3-IY-e7k"/>

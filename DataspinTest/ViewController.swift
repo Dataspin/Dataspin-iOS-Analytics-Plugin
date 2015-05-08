@@ -21,7 +21,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var apnTokenLabel: UITextField!
     @IBOutlet weak var advertisingIdLabel: UITextField!
     @IBOutlet weak var appVersionLabel: UITextField!
+    @IBOutlet weak var eventIdLabel: UITextField!
+    @IBOutlet weak var eventExtraData: UITextField!
     
+    @IBOutlet weak var currentItemLabel: UILabel!
     @IBOutlet weak var endDeviceUUIDLabel: UILabel!
     @IBOutlet weak var uuidLabel: UILabel!
     @IBOutlet weak var sessionId: UILabel!
@@ -29,10 +32,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var debugSwitch: UISwitch!
     @IBOutlet weak var forceUpdateSwitch: UISwitch!
     
-    
+    @IBOutlet weak var purchaseItemLoading: UIActivityIndicatorView!
+    @IBOutlet weak var getItemsLoading: UIActivityIndicatorView!
     @IBOutlet weak var registerUserLoading: UIActivityIndicatorView!
     @IBOutlet weak var registerDeviceLoading: UIActivityIndicatorView!
     @IBOutlet weak var sessionStartLoading: UIActivityIndicatorView!
+    @IBOutlet weak var eventRegisterLoading: UIActivityIndicatorView!
     
     @IBOutlet weak var startSessionBlur: UIVisualEffectView!
     @IBOutlet weak var registerDeviceBlur: UIVisualEffectView!
@@ -41,7 +46,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let textCellIdentifier = "TextCell"
     
-    let swiftBlogs = ["dywan z jelonkiem"]
+    let items = ["dywan z jelonkiem"]
+    var currentlySelectedItem = "tab"
     
     // MARK:  UITextFieldDelegate Methods
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -49,14 +55,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return swiftBlogs.count
+        return items.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         println("Index path \(indexPath.row)")
         let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = swiftBlogs[indexPath.row]
+        cell.textLabel?.text = items[indexPath.row]
         
         return cell
     }
@@ -66,7 +72,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        println(swiftBlogs[row])
+        println(items[row])
     }
     // -- END TABLE --
     
@@ -119,15 +125,59 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     @IBAction func endSession(sender: AnyObject) {
-        
+        sessionStartLoading.startAnimating()
+        DataspinManager.Instance.EndSession() { (error) in
+            if(error == nil) {
+                self.sessionId.text = "Session ID: \(DataspinManager.Instance.sessionId!)"
+            }
+            else {
+                
+            }
+            
+            self.sessionStartLoading.stopAnimating()
+        }
     }
     
     @IBAction func getItems(sender: AnyObject) {
-        
+        getItemsLoading.startAnimating()
+        DataspinManager.Instance.GetItems() { (error) in
+            if(error == nil) {
+                println("Items received!")
+            }
+            else {
+                
+            }
+            
+            self.getItemsLoading.stopAnimating()
+        }
     }
 
     @IBAction func purchaseItem(sender: AnyObject) {
-        
+        purchaseItemLoading.startAnimating()
+        DataspinManager.Instance.PurchaseItem(currentlySelectedItem) { (error) in
+            if(error == nil) {
+                println("Item purchased!")
+            }
+            else {
+                
+            }
+            
+            self.purchaseItemLoading.stopAnimating()
+        }
+    }
+    
+    @IBAction func registerEvent(sender: AnyObject) {
+        eventRegisterLoading.startAnimating()
+        DataspinManager.Instance.RegisterEvent(eventIdLabel.text!, extraData: eventExtraData.text!) { (error) in
+            if(error == nil) {
+                println("Event registered!")
+            }
+            else {
+                
+            }
+            
+            self.eventRegisterLoading.stopAnimating()
+        }
     }
     
     override func viewDidLoad() {

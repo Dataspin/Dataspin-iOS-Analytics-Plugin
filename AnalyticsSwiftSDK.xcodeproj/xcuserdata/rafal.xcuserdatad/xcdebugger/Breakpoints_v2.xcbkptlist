@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
-            timestampString = "452701788.050337"
+            timestampString = "452812721.111701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "DataspinWebRequest"
             landmarkType = "3">
          </BreakpointContent>
@@ -32,6 +32,38 @@
             startingLineNumber = "27"
             endingLineNumber = "27"
             landmarkName = "md5()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
+            timestampString = "452807181.268145"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "Event"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
+            timestampString = "452812721.111701"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "parametersToURLSuffix()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

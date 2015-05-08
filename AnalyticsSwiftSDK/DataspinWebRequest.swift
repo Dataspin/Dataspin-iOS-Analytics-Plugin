@@ -30,17 +30,27 @@ public class DataspinWebRequest {
     
     public func Fire(completion: ((error: NSError?, response: NSDictionary?) -> Void)) {
         DataspinManager.Instance.Log("Firing \(self.properties.dataspinMethod.rawValue) request")
+     
+        if(self.properties.httpMethod == HttpMethod.GET) {
+            var strUrl = DataspinManager.Instance.config!.GetURL(self.properties.dataspinMethod)
+            strUrl += parametersToURLSuffix()
+            self.properties.URL = NSURL(string: strUrl)!
+        }
         
         let mutableURLRequest = NSMutableURLRequest(URL: properties.URL)
         mutableURLRequest.HTTPMethod = self.properties.httpMethod.rawValue
-        
-        // Authorization header
         mutableURLRequest.setValue("Token \(DataspinManager.Instance.config!.ApiKey)", forHTTPHeaderField: "Authorization")
+        
         let requestConvertible : URLRequestConvertible = ParameterEncoding.JSON.encode(mutableURLRequest, parameters: self.properties.parameters).0
         
-        request(requestConvertible).responseJSON{ (request, response, data, error) in
-            println("Error: \(error), Response Code: \(response?.statusCode)")
-            let dict : NSDictionary = (data as? NSDictionary)!
+        let requestBody = self.properties.httpMethod == HttpMethod.GET ? mutableURLRequest : requestConvertible
+        
+        request(requestBody).responseJSON{ (request, response, data, error) in
+            println("Request: \(request), Error: \(error), Response Code: \(response?.statusCode), Response: \(data)")
+            var dict : NSDictionary = NSDictionary()
+            if(data != nil) {
+                dict = (data as? NSDictionary)!
+            }
             
             self.properties.responseCode = response?.statusCode
             self.properties.response = dict
@@ -55,6 +65,19 @@ public class DataspinWebRequest {
             completion(error: self.properties.error, response: self.properties.response)
             
         }
+    }
+    
+    private func parametersToURLSuffix() -> String{
+        let urlParamsDict = self.properties.parameters! as NSDictionary
+        var iterator : Int = 0
+        var urlSuffix : String = ""
+        for(key, value) in urlParamsDict {
+            if(iterator == 0)  { urlSuffix += "?\(key)=\(value)" }
+            else { urlSuffix += "&\(key)=\(value)" }
+            iterator++
+        }
+        
+        return urlSuffix
     }
     
     public func ToString() -> String {

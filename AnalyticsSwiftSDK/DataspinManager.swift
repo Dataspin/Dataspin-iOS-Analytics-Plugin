@@ -10,6 +10,9 @@ import Foundation
 
 private let _SomeManagerSharedInstance = DataspinManager()
 
+extension NSString : AnyObject {
+}
+
 public enum DataspinMethod : String {
     case RegisterUser = "/register_user/"
     case RegisterDevice = "/register_user_device/"
@@ -25,6 +28,20 @@ public enum DataspinMethod : String {
 public enum HttpMethod : String {
     case POST = "POST"
     case GET = "GET"
+}
+
+public struct Item {
+    internal var id : String
+    internal var name : String
+    internal var price : Float
+    internal var isCoinpack : Boolean
+    internal var parameters : NSDictionary
+    internal var rawNSDictionary : NSDictionary
+}
+
+public struct Event {
+    internal var id : String
+    internal var name : String
 }
 
 public class DataspinManager {
@@ -181,6 +198,103 @@ public class DataspinManager {
             }
         }
     }
+    
+    public func EndSession(completion: ((error: NSError?) -> Void)) {
+        if(sessionId != nil || sessionId != -1) {
+            let parameters = [
+                "end_user_device": self.deviceUUID!,
+                "app_version": self.config!.AppVersion,
+                "connectivity_type": 1,
+                "id": sessionId!
+            ]
+            
+            Log("Ending session...")
+            
+            let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.EndSession, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
+                if(error == nil) {
+                    self.sessionId = -1
+                    self.Log("Session ended!")
+                }
+                else {
+                    self.Log("Failed to end session!")
+                }
+                
+                completion(error: error)
+            }
+        }
+    }
+    
+    public func GetItems(completion: ((error: NSError?) -> Void)) {
+        if(sessionId != nil || sessionId != -1) {
+            let parameters = [
+                "app_version" : self.config!.AppVersion as AnyObject
+            ]
+            
+            Log("Getting items...")
+            
+            let r = DataspinWebRequest(httpMethod: HttpMethod.GET, dsMethod: DataspinMethod.GetItems, parameters: parameters).Fire() {(error, response) in
+                if(error == nil) {
+                    self.Log("Items retrieved!")
+                }
+                else {
+                    self.Log("Failed to get items!")
+                }
+                
+                completion(error: error)
+            }
+        }
+    }
+    
+    public func PurchaseItem(itemId: String, completion: ((error: NSError?) -> Void)) {
+        if(sessionId != nil || sessionId != -1) {
+            let parameters = [
+                "item": itemId,
+                "app_version": self.config!.AppVersion as AnyObject,
+                "session": sessionId!,
+                "end_user_device": deviceUUID!
+            ]
+            
+            Log("Purchasing item...")
+            
+            let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.PurchaseItem, parameters: parameters).Fire() {(error, response) in
+                if(error == nil) {
+                    self.Log("Item purchased!")
+                }
+                else {
+                    self.Log("Failed to get items!")
+                }
+                
+                completion(error: error)
+            }
+        }
+    }
+    
+    public func RegisterEvent(customEvent : String, extraData: String? = nil, completion: ((error: NSError?) -> Void)) {
+        if(sessionId != nil || sessionId != -1) {
+            let parameters = [
+                "custom_event": customEvent,
+                "app_version": self.config!.AppVersion as AnyObject,
+                "data": extraData!,
+                "session": sessionId!,
+                "end_user_device": deviceUUID!
+            ]
+            
+            Log("Registering event...")
+            
+            let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.RegisterEvent, parameters: parameters).Fire() {(error, response) in
+                if(error == nil) {
+                    self.Log("Event registered!")
+                }
+                else {
+                    self.Log("Failed to get items!")
+                }
+                
+                completion(error: error)
+            }
+        }
+    }
+    
+    
     
     private func GetDevice() -> [String: AnyObject] {
         let screenSize: CGRect = UIScreen.mainScreen().bounds
