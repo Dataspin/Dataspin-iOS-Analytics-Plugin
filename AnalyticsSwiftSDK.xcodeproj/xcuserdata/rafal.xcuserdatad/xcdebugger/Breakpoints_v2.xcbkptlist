@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
-            timestampString = "452812721.111701"
+            timestampString = "452863516.976017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "DataspinWebRequest"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinWebRequest.swift"
-            timestampString = "452812721.111701"
+            timestampString = "452863516.976017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "parametersToURLSuffix()"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
-            timestampString = "452856486.252694"
+            timestampString = "452863516.976017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "269"
-            endingLineNumber = "269"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "GetItems(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
-            timestampString = "452856486.252694"
+            timestampString = "452863516.976017"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
             landmarkName = "GetItems(_:)"
             landmarkType = "5">
          </BreakpointContent>

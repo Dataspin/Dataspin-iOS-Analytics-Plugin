@@ -82,6 +82,8 @@ public class DataspinManager {
     public var sessionId : Int?
     public var itemsArray : [Item]
     
+    public var log : [String] = []
+    
     init() {
         config = Config()
         userRegistered = false;
@@ -112,12 +114,18 @@ public class DataspinManager {
     
     //! TODO: Extend to log into file and send as dump information
     public func Log(message: String) {
-        if(config!.DebugMode) { println("\(LogTag): \(message)") }
+        if(config!.DebugMode) {
+            println("\(LogTag): \(message)")
+            log += ["\(message)\n"]
+        }
     }
     
     //! TODO: Extend to log into file and send as dump information
     public func LogError(message: String) {
-        if(config!.DebugMode) { println("\(ErrorLogTag): \(message)") }
+        if(config!.DebugMode) {
+            println("\(ErrorLogTag): \(message)")
+            log += ["\(message)\n"]
+        }
     }
     
     //! Use for Dataspin initialization at the game start
@@ -131,8 +139,10 @@ public class DataspinManager {
     public func RegisterUser(userName: String?=nil, surname: String?=nil, email: String?=nil, facebookId: String?=nil, gamecenterId: String?=nil, forceUpdate: Bool?=false, completion: ((error: NSError?) -> Void)) {
         
         // Check if user was already registered, if so, don't send request, fire onUserRegistered callback
-        if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_uuid") as? [NSString] {
+        if(NSUserDefaults.standardUserDefaults().objectForKey("dataspin_uuid") as? String != nil) {
             Log("User already registered! If you would like to update user data user forceUpdate: Bool parameter.")
+            self.userUUID = (NSUserDefaults.standardUserDefaults().objectForKey("dataspin_uuid") as! String)
+            self.userRegistered = true
             completion(error: nil)
         }
         else {
@@ -151,6 +161,7 @@ public class DataspinManager {
                     self.userUUID = response!["uuid"] as? String
                     self.userRegistered = true
                     self.Log("User succesfully registered, UUID: \(self.userUUID!)")
+                    NSUserDefaults.standardUserDefaults().setObject(self.userUUID!, forKey: "dataspin_uuid")
                 }
                 else {
                     self.Log("Failed to register user")
@@ -163,8 +174,11 @@ public class DataspinManager {
     
     //! Used for registering a device, must be called after RegisrerUser and before StartSession
     public func RegisterDevice(applePushNotificationsToken: String?=nil, advertisingId: String?=nil,completion: ((error: NSError?) -> Void)) {
-        if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_device_uuid") as? [NSString] {
+        if let dataspinDefaults = NSUserDefaults.standardUserDefaults().objectForKey("dataspin_device_uuid") as? String {
+            self.deviceUUID = (NSUserDefaults.standardUserDefaults().objectForKey("dataspin_device_uuid") as! String)
+            self.deviceRegistered = true
             Log("Device already registered!")
+            completion(error: nil)
         }
         else {
             if(userRegistered!) {
@@ -182,6 +196,7 @@ public class DataspinManager {
                         self.deviceUUID = response!["uuid"] as? String
                         self.deviceRegistered = true
                         self.Log("Device succesfully registered, UUID: \(self.deviceUUID!)")
+                        NSUserDefaults.standardUserDefaults().setObject(self.deviceUUID!, forKey: "dataspin_device_uuid")
                     }
                     else {
                         self.Log("Failed to register device")
@@ -263,7 +278,7 @@ public class DataspinManager {
                     for rawItem in items {
                         let item : Item = Item(id: rawItem["internal_id"]! as! String, name: rawItem["long_name"]! as! String, price: (rawItem["price"]! as! NSString).floatValue, isCoinpack: (rawItem["is_coinpack"] as! Int).toBool()!, parameters: rawItem["parameters"] as? String)
                         self.itemsArray.append(item)
-                        println("Items retrieved! Count: \(items.count), Array: \(self.itemsArray)")
+                        self.Log("Items retrieved! Count: \(items.count), Array: \(self.itemsArray)")
                     }
                 }
         

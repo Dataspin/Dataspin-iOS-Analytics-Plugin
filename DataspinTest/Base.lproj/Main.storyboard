@@ -405,16 +405,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-vY-956">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Dataspin Log: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="637" width="400" height="78"/>
-                                </variation>
-                            </textView>
                             <visualEffectView opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-Qe-Vq4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3yb-Dt-Wia">
@@ -437,6 +427,18 @@
                                     <rect key="frame" x="0.0" y="204" width="418" height="289"/>
                                 </variation>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkO-Hf-Hot">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Logs">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="296" y="618" width="55" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="DFo-AQ-HRG" kind="presentation" id="igt-ai-j0o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -471,9 +473,9 @@
                                 <exclude reference="FKl-RQ-hUv"/>
                                 <exclude reference="bxy-ri-yvn"/>
                                 <exclude reference="CST-5J-j9k"/>
-                                <exclude reference="EkT-vY-956"/>
                                 <exclude reference="VgX-Qe-Vq4"/>
                                 <exclude reference="6WX-t0-hm1"/>
+                                <exclude reference="ZkO-Hf-Hot"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -508,12 +510,14 @@
                                 <include reference="FKl-RQ-hUv"/>
                                 <include reference="bxy-ri-yvn"/>
                                 <exclude reference="CST-5J-j9k"/>
-                                <include reference="EkT-vY-956"/>
                                 <include reference="VgX-Qe-Vq4"/>
                                 <include reference="6WX-t0-hm1"/>
+                                <include reference="ZkO-Hf-Hot"/>
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="advertisingIdLabel" destination="E3R-HV-QtC" id="nCg-td-Erg"/>
                         <outlet property="apnTokenLabel" destination="cGh-aa-H0Z" id="T7b-G1-NMO"/>
@@ -544,8 +548,94 @@
             </objects>
             <point key="canvasLocation" x="1789.5" y="398.25"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="3ow-6l-6TC">
+            <objects>
+                <viewController id="DFo-AQ-HRG" customClass="ViewController" customModule="DataspinTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uri-Lh-HGG"/>
+                        <viewControllerLayoutGuide type="bottom" id="XED-lG-6CK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m5A-w3-hca">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huo-KC-aqJ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="66" width="341" height="532"/>
+                                </variation>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSW-lJ-lbK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="195" y="28" width="35" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="mwE-1h-kKZ" kind="show" id="9Ug-c6-PXB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtT-eI-nTT">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Send Mail">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="28" width="69" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="sendLogsViaMail:" destination="DFo-AQ-HRG" eventType="touchUpInside" id="H64-CA-iPI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xt-gy-cjv">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Update Logs">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="98" y="28" width="89" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="updateLogsLabel:" destination="DFo-AQ-HRG" eventType="touchUpInside" id="IYv-67-PFT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="huo-KC-aqJ"/>
+                                <exclude reference="GSW-lJ-lbK"/>
+                                <exclude reference="KtT-eI-nTT"/>
+                                <exclude reference="6xt-gy-cjv"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="huo-KC-aqJ"/>
+                                <include reference="GSW-lJ-lbK"/>
+                                <include reference="KtT-eI-nTT"/>
+                                <include reference="6xt-gy-cjv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="logTextLabel" destination="huo-KC-aqJ" id="4Tx-5A-WxU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMk-hz-2Ju" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2466" y="398.25"/>
+        </scene>
     </scenes>
     <resources>
         <image name="logo_dark kopia.png" width="500" height="119"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Ug-c6-PXB"/>
+    </inferredMetricsTieBreakers>
 </document>

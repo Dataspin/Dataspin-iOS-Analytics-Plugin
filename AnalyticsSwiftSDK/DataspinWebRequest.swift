@@ -46,7 +46,7 @@ public class DataspinWebRequest {
         let requestBody = self.properties.httpMethod == HttpMethod.GET ? mutableURLRequest : requestConvertible
         
         request(requestBody).responseJSON{ (request, response, data, error) in
-            println("Request: \(request), Error: \(error), Response Code: \(response?.statusCode), Response: \(data)")
+            DataspinManager.Instance.Log("Request: \(request), Error: \(error), Response Code: \(response?.statusCode), Response: \(data)")
             var dict : NSDictionary = NSDictionary()
             if(data != nil) {
                 dict = (data as? NSDictionary)!
@@ -57,7 +57,6 @@ public class DataspinWebRequest {
             self.properties.error = error
             
             if(self.properties.error == nil && !(self.properties.responseCode >= 200 && self.properties.responseCode < 300)) {
-                println("Adding error infomation...")
                 self.properties.error = NSError(domain: "Something went wrong with Client<->Server communication", code: self.properties.responseCode!, userInfo: (self.properties.response as! [NSObject : AnyObject]))
             }
             

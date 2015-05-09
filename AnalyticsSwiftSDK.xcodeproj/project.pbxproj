@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5255AD01AF6827200C04990 /* AnalyticsSwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B50FEA501AFE2EA0003659F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50FEA4F1AFE2EA0003659F9 /* Foundation.framework */; };
+		B50FEA521AFE2F2B003659F9 /* AnalyticsSwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B50FEA511AFE2F2B003659F9 /* AnalyticsSwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B50FEA541AFE2F53003659F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50FEA531AFE2F53003659F9 /* UIKit.framework */; };
 		B5255AD61AF6827200C04990 /* AnalyticsSwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; };
 		B5255ADD1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */; };
 		B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255AE61AF6828400C04990 /* DataspinManager.swift */; };
@@ -66,9 +68,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B50FEA4F1AFE2EA0003659F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B50FEA511AFE2F2B003659F9 /* AnalyticsSwiftSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsSwiftSDK.h; sourceTree = "<group>"; };
+		B50FEA531AFE2F53003659F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnalyticsSwiftSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5255ACE1AF6827200C04990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnalyticsSwiftSDK.h; sourceTree = "<group>"; };
 		B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalyticsSwiftSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5255ADB1AF6827200C04990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSwiftSDKTests.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50FEA541AFE2F53003659F9 /* UIKit.framework in Frameworks */,
+				B50FEA501AFE2EA0003659F9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +134,8 @@
 		B5255AC01AF6827200C04990 = {
 			isa = PBXGroup;
 			children = (
+				B50FEA531AFE2F53003659F9 /* UIKit.framework */,
+				B50FEA4F1AFE2EA0003659F9 /* Foundation.framework */,
 				B5255ACC1AF6827200C04990 /* DataspinSDK */,
 				B5255AD91AF6827200C04990 /* AnalyticsSwiftSDKTests */,
 				B53919CD1AF6901D0034F7BD /* DataspinTest */,
@@ -150,7 +158,6 @@
 		B5255ACC1AF6827200C04990 /* DataspinSDK */ = {
 			isa = PBXGroup;
 			children = (
-				B5255ACF1AF6827200C04990 /* AnalyticsSwiftSDK.h */,
 				B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */,
 				B5255ACD1AF6827200C04990 /* Supporting Files */,
 				B53919F71AF6AE8B0034F7BD /* Alamofire.swift */,
@@ -158,6 +165,7 @@
 				B5255AE61AF6828400C04990 /* DataspinManager.swift */,
 				B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */,
 				B533FBD01AFAB9C800C84B3D /* Swift-MD5.swift */,
+				B50FEA511AFE2F2B003659F9 /* AnalyticsSwiftSDK.h */,
 			);
 			name = DataspinSDK;
 			path = AnalyticsSwiftSDK;
@@ -234,7 +242,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5255AD01AF6827200C04990 /* AnalyticsSwiftSDK.h in Headers */,
+				B50FEA521AFE2F2B003659F9 /* AnalyticsSwiftSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +340,7 @@
 					};
 					B53919CB1AF6901D0034F7BD = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = V53VRV7GEP;
 					};
 					B53919DF1AF6901D0034F7BD = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -571,7 +580,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -594,7 +603,7 @@
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

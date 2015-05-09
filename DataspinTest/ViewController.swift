@@ -8,8 +8,9 @@
 
 import UIKit
 import AnalyticsSwiftSDK
+import MessageUI
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var domainLabel: UITextField!
     @IBOutlet weak var apiKeyLabel: UITextField!
@@ -23,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var appVersionLabel: UITextField!
     @IBOutlet weak var eventIdLabel: UITextField!
     @IBOutlet weak var eventExtraData: UITextField!
+    @IBOutlet weak var logTextLabel: UITextView!
     
     @IBOutlet weak var currentItemLabel: UILabel!
     @IBOutlet weak var endDeviceUUIDLabel: UILabel!
@@ -191,6 +193,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.eventRegisterLoading.stopAnimating()
         }
     }
+    @IBAction func sendLogsViaMail(sender: AnyObject) {
+        var emailTitle = "Dataspin iOS Example App Log"
+        var messageBody = DataspinManager.Instance.log.description
+        var toRecipents = ["friend@stackoverflow.com"]
+        var mc: MFMailComposeViewController = MFMailComposeViewController()
+        mc.mailComposeDelegate = self
+        mc.setSubject(emailTitle)
+        mc.setMessageBody(messageBody, isHTML: false)
+        mc.setToRecipients(toRecipents)
+        
+        self.presentViewController(mc, animated: true, completion: nil)
+    }
+    
+    @IBAction func updateLogsLabel(sender: AnyObject) {
+        logTextLabel.text = DataspinManager.Instance.log.description
+    }
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
+        switch result.value {
+        case MFMailComposeResultCancelled.value:
+            println("Mail cancelled")
+        case MFMailComposeResultSaved.value:
+            println("Mail saved")
+        case MFMailComposeResultSent.value:
+            println("Mail sent")
+        case MFMailComposeResultFailed.value:
+            println("Mail sent failure: %@", [error.localizedDescription])
+        default:
+            break
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -199,6 +233,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             itemsTableView.delegate = self
             itemsTableView.dataSource = self
         }
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
