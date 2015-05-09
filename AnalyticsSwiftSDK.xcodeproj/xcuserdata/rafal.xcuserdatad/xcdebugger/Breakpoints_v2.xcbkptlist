@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
-            timestampString = "452807181.268145"
+            timestampString = "452852036.941261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
             landmarkName = "Event"
             landmarkType = "3">
          </BreakpointContent>
@@ -64,6 +64,38 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "parametersToURLSuffix()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
+            timestampString = "452856486.252694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "GetItems(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AnalyticsSwiftSDK/DataspinManager.swift"
+            timestampString = "452856486.252694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "GetItems(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

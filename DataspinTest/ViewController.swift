@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let textCellIdentifier = "TextCell"
     
-    let items = ["dywan z jelonkiem"]
+    var items : [String] = []
     var currentlySelectedItem = "tab"
     
     // MARK:  UITextFieldDelegate Methods
@@ -72,6 +72,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
+        let item = DataspinManager.Instance.GetItemByName(items[row])
+        currentItemLabel.text = "Current item: \(item!.id)"
+        currentlySelectedItem = item!.id
         println(items[row])
     }
     // -- END TABLE --
@@ -102,6 +105,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         DataspinManager.Instance.RegisterDevice(applePushNotificationsToken: apnTokenLabel.text!, advertisingId: advertisingIdLabel.text!) { (error) in
             if(error == nil) {
                 self.endDeviceUUIDLabel.text = "End_device: \(DataspinManager.Instance.deviceUUID!)"
+                self.startSessionBlur.hidden = true
             }
             else {
                 
@@ -129,6 +133,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         DataspinManager.Instance.EndSession() { (error) in
             if(error == nil) {
                 self.sessionId.text = "Session ID: \(DataspinManager.Instance.sessionId!)"
+                self.startSessionBlur.hidden = false
             }
             else {
                 
@@ -140,9 +145,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func getItems(sender: AnyObject) {
         getItemsLoading.startAnimating()
-        DataspinManager.Instance.GetItems() { (error) in
+        DataspinManager.Instance.GetItems() { (itemsArray, error) in
             if(error == nil) {
-                println("Items received!")
+                // Clear array and re-assign elements
+                self.items = []
+                for item in itemsArray {
+                    self.items.append(item.name)
+                }
+                println("Items received! Array: \(self.items)")
+                
+                self.itemsTableView.reloadData()
             }
             else {
                 

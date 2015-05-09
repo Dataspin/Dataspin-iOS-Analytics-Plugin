@@ -88,7 +88,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="onDataspinStarted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1xb-Kh-1d2"/>
-                                    <segue destination="mwE-1h-kKZ" kind="show" id="er6-NB-ANd"/>
+                                    <segue destination="mwE-1h-kKZ" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="er6-NB-ANd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -242,14 +242,6 @@
                                     <rect key="frame" x="226" y="92" width="110" height="21"/>
                                 </variation>
                             </label>
-                            <visualEffectView opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-Qe-Vq4">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3yb-Dt-Wia">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa9-GK-XPU">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="8"/>
@@ -259,16 +251,6 @@
                                     <rect key="frame" x="128" y="108" width="265" height="21"/>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-vY-956">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Dataspin Log: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="722" width="400" height="78"/>
-                                </variation>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8en-0x-qwN">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Start Session">
@@ -350,14 +332,6 @@
                                     <rect key="frame" x="129" y="360" width="20" height="20"/>
                                 </variation>
                             </activityIndicatorView>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-t0-hm1">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cOe-zK-pWZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Item: Ad_remover" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI2-6w-h1B">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -431,6 +405,38 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EkT-vY-956">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Dataspin Log: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="637" width="400" height="78"/>
+                                </variation>
+                            </textView>
+                            <visualEffectView opaque="NO" alpha="0.70000000000000007" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-Qe-Vq4">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3yb-Dt-Wia">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="128" width="407" height="79"/>
+                                </variation>
+                            </visualEffectView>
+                            <visualEffectView opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6WX-t0-hm1">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="cOe-zK-pWZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="204" width="418" height="289"/>
+                                </variation>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -448,9 +454,7 @@
                                 <exclude reference="E3R-HV-QtC"/>
                                 <exclude reference="ztF-H7-ifp"/>
                                 <exclude reference="f3V-bT-KfS"/>
-                                <exclude reference="VgX-Qe-Vq4"/>
                                 <exclude reference="aa9-GK-XPU"/>
-                                <exclude reference="EkT-vY-956"/>
                                 <exclude reference="8en-0x-qwN"/>
                                 <exclude reference="iKY-mF-4ch"/>
                                 <exclude reference="UIL-BS-vdX"/>
@@ -459,7 +463,6 @@
                                 <exclude reference="YRd-8p-MUa"/>
                                 <exclude reference="O3a-Q6-TgE"/>
                                 <exclude reference="1Kc-Vt-8av"/>
-                                <exclude reference="6WX-t0-hm1"/>
                                 <exclude reference="JI2-6w-h1B"/>
                                 <exclude reference="x3P-dg-A4b"/>
                                 <exclude reference="vZf-Gm-Ne4"/>
@@ -468,6 +471,9 @@
                                 <exclude reference="FKl-RQ-hUv"/>
                                 <exclude reference="bxy-ri-yvn"/>
                                 <exclude reference="CST-5J-j9k"/>
+                                <exclude reference="EkT-vY-956"/>
+                                <exclude reference="VgX-Qe-Vq4"/>
+                                <exclude reference="6WX-t0-hm1"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -485,9 +491,7 @@
                                 <include reference="E3R-HV-QtC"/>
                                 <include reference="ztF-H7-ifp"/>
                                 <include reference="f3V-bT-KfS"/>
-                                <exclude reference="VgX-Qe-Vq4"/>
                                 <include reference="aa9-GK-XPU"/>
-                                <include reference="EkT-vY-956"/>
                                 <include reference="8en-0x-qwN"/>
                                 <include reference="iKY-mF-4ch"/>
                                 <include reference="UIL-BS-vdX"/>
@@ -496,7 +500,6 @@
                                 <include reference="YRd-8p-MUa"/>
                                 <include reference="O3a-Q6-TgE"/>
                                 <include reference="1Kc-Vt-8av"/>
-                                <exclude reference="6WX-t0-hm1"/>
                                 <include reference="JI2-6w-h1B"/>
                                 <include reference="x3P-dg-A4b"/>
                                 <include reference="vZf-Gm-Ne4"/>
@@ -505,6 +508,9 @@
                                 <include reference="FKl-RQ-hUv"/>
                                 <include reference="bxy-ri-yvn"/>
                                 <exclude reference="CST-5J-j9k"/>
+                                <include reference="EkT-vY-956"/>
+                                <include reference="VgX-Qe-Vq4"/>
+                                <include reference="6WX-t0-hm1"/>
                             </mask>
                         </variation>
                     </view>

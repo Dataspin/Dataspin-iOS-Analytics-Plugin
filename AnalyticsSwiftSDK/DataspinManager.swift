@@ -13,6 +13,20 @@ private let _SomeManagerSharedInstance = DataspinManager()
 extension NSString : AnyObject {
 }
 
+extension Int {
+    func toBool() -> Bool?
+    {
+        switch self {
+        case 0:
+        return false
+        case 1:
+        return true
+        default:
+        return nil
+        }
+    }
+}
+
 public enum DataspinMethod : String {
     case RegisterUser = "/register_user/"
     case RegisterDevice = "/register_user_device/"
@@ -30,13 +44,16 @@ public enum HttpMethod : String {
     case GET = "GET"
 }
 
-public struct Item {
-    internal var id : String
-    internal var name : String
-    internal var price : Float
-    internal var isCoinpack : Boolean
-    internal var parameters : NSDictionary
-    internal var rawNSDictionary : NSDictionary
+public struct Item : Printable {
+    public var id : String
+    public var name : String
+    public var price : Float
+    public var isCoinpack : Bool
+    public var parameters : String?=nil
+    
+    public var description : String {
+        return "[Item] Id: \(id), Name: \(name), Price: \(price), Coinpack?: \(isCoinpack), Parameters: \(parameters)"
+    }
 }
 
 public struct Event {
@@ -61,13 +78,17 @@ public class DataspinManager {
     public var deviceUUID : String?
     public var userRegistered : Bool?
     public var deviceRegistered : Bool?
+    public var isSessionStarted : Bool?
     public var sessionId : Int?
+    public var itemsArray : [Item]
     
     init() {
         config = Config()
         userRegistered = false;
+        isSessionStarted = false
         deviceRegistered = false;
         sessionId = -1;
+        itemsArray = []
     }
     
     //! Configuration settings
@@ -188,6 +209,7 @@ public class DataspinManager {
             let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.StartSession, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
                 if(error == nil) {
                     self.sessionId = response!["id"] as? Int
+                    self.isSessionStarted = true
                     self.Log("Session started!")
                 }
                 else {
@@ -200,7 +222,7 @@ public class DataspinManager {
     }
     
     public func EndSession(completion: ((error: NSError?) -> Void)) {
-        if(sessionId != nil || sessionId != -1) {
+        if(isSessionStarted!) {
             let parameters = [
                 "end_user_device": self.deviceUUID!,
                 "app_version": self.config!.AppVersion,
@@ -213,6 +235,7 @@ public class DataspinManager {
             let r = DataspinWebRequest(httpMethod: HttpMethod.POST, dsMethod: DataspinMethod.EndSession, parameters: parameters as? [String : AnyObject]).Fire() {(error, response) in
                 if(error == nil) {
                     self.sessionId = -1
+                    self.isSessionStarted = false
                     self.Log("Session ended!")
                 }
                 else {
@@ -224,8 +247,8 @@ public class DataspinManager {
         }
     }
     
-    public func GetItems(completion: ((error: NSError?) -> Void)) {
-        if(sessionId != nil || sessionId != -1) {
+    public func GetItems(completion: ((items: [Item], error: NSError?) -> Void)) {
+        if(isSessionStarted!) {
             let parameters = [
                 "app_version" : self.config!.AppVersion as AnyObject
             ]
@@ -234,19 +257,27 @@ public class DataspinManager {
             
             let r = DataspinWebRequest(httpMethod: HttpMethod.GET, dsMethod: DataspinMethod.GetItems, parameters: parameters).Fire() {(error, response) in
                 if(error == nil) {
-                    self.Log("Items retrieved!")
+                    var i : Int = 0
+                    var items : NSArray = response!["results"] as! NSArray
+                    self.itemsArray = []
+                    for rawItem in items {
+                        let item : Item = Item(id: rawItem["internal_id"]! as! String, name: rawItem["long_name"]! as! String, price: (rawItem["price"]! as! NSString).floatValue, isCoinpack: (rawItem["is_coinpack"] as! Int).toBool()!, parameters: rawItem["parameters"] as? String)
+                        self.itemsArray.append(item)
+                        println("Items retrieved! Count: \(items.count), Array: \(self.itemsArray)")
+                    }
                 }
+        
                 else {
                     self.Log("Failed to get items!")
                 }
                 
-                completion(error: error)
+                completion(items: self.itemsArray, error: error)
             }
         }
     }
     
     public func PurchaseItem(itemId: String, completion: ((error: NSError?) -> Void)) {
-        if(sessionId != nil || sessionId != -1) {
+        if(isSessionStarted!) {
             let parameters = [
                 "item": itemId,
                 "app_version": self.config!.AppVersion as AnyObject,
@@ -270,7 +301,7 @@ public class DataspinManager {
     }
     
     public func RegisterEvent(customEvent : String, extraData: String? = nil, completion: ((error: NSError?) -> Void)) {
-        if(sessionId != nil || sessionId != -1) {
+        if(isSessionStarted!) {
             let parameters = [
                 "custom_event": customEvent,
                 "app_version": self.config!.AppVersion as AnyObject,
@@ -286,7 +317,7 @@ public class DataspinManager {
                     self.Log("Event registered!")
                 }
                 else {
-                    self.Log("Failed to get items!")
+                    self.Log("Failed to get register an item!")
                 }
                 
                 completion(error: error)
@@ -294,6 +325,14 @@ public class DataspinManager {
         }
     }
     
+    public func GetItemByName(name : String) -> Item? {
+        for item in self.itemsArray {
+            if(item.name == name) {
+               return item
+            }
+        }
+        return nil
+    }
     
     
     private func GetDevice() -> [String: AnyObject] {
