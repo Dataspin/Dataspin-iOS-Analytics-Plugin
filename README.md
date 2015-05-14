@@ -21,6 +21,8 @@ Integrating Dataspin takes two easy steps:
      - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions       
      {
          // initialize the Dataspin library
+
+         // TO BE ADDED
            
      }
 ```
@@ -37,7 +39,7 @@ It is shown as is for example purposes only.
 
 ### Dive deeper
 
-For more common use cases, visit our [online documentation](https://help.chartboost.com/documentation/ios).
+For more common use cases, visit our [online documentation](https://github.com/Dataspin/Dataspin-iOS-Analytics-Plugin/wiki).
 
 Check out our documentation for the full API
 specification.
