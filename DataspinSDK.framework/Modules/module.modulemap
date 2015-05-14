@@ -1,0 +1,10 @@
+framework module DataspinSDK {
+  umbrella header "DataspinSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module DataspinSDK.Swift {
+    header "DataspinSDK-Swift.h"
+}
