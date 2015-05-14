@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B50FEA501AFE2EA0003659F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50FEA4F1AFE2EA0003659F9 /* Foundation.framework */; };
-		B50FEA521AFE2F2B003659F9 /* AnalyticsSwiftSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B50FEA511AFE2F2B003659F9 /* AnalyticsSwiftSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B50FEA521AFE2F2B003659F9 /* DataspinSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = B50FEA511AFE2F2B003659F9 /* DataspinSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B50FEA541AFE2F53003659F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50FEA531AFE2F53003659F9 /* UIKit.framework */; };
-		B5255AD61AF6827200C04990 /* AnalyticsSwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; };
+		B5255AD61AF6827200C04990 /* DataspinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* DataspinSDK.framework */; };
 		B5255ADD1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */; };
 		B5255AE71AF6828400C04990 /* DataspinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255AE61AF6828400C04990 /* DataspinManager.swift */; };
 		B5255B301AF6887B00C04990 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5255B2F1AF6887B00C04990 /* SwiftyJSON.swift */; };
@@ -21,8 +21,8 @@
 		B53919D81AF6901D0034F7BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B53919D71AF6901D0034F7BD /* Images.xcassets */; };
 		B53919DB1AF6901D0034F7BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53919D91AF6901D0034F7BD /* LaunchScreen.xib */; };
 		B53919E71AF6901D0034F7BD /* DataspinTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919E61AF6901D0034F7BD /* DataspinTestTests.swift */; };
-		B53919EE1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; };
-		B53919EF1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B53919EE1AF6908D0034F7BD /* DataspinSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* DataspinSDK.framework */; };
+		B53919EF1AF6908D0034F7BD /* DataspinSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5255ACA1AF6827200C04990 /* DataspinSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B53919F61AF6A4C90034F7BD /* logo_dark kopia.png in Resources */ = {isa = PBXBuildFile; fileRef = B53919F51AF6A4C90034F7BD /* logo_dark kopia.png */; };
 		B53919F81AF6AE8B0034F7BD /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F71AF6AE8B0034F7BD /* Alamofire.swift */; };
 		B53919FA1AF6B17E0034F7BD /* AlamofireSwifty.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53919F91AF6B17E0034F7BD /* AlamofireSwifty.swift */; };
@@ -60,7 +60,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B53919EF1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Embed Frameworks */,
+				B53919EF1AF6908D0034F7BD /* DataspinSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,11 +69,11 @@
 
 /* Begin PBXFileReference section */
 		B50FEA4F1AFE2EA0003659F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B50FEA511AFE2F2B003659F9 /* AnalyticsSwiftSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsSwiftSDK.h; sourceTree = "<group>"; };
+		B50FEA511AFE2F2B003659F9 /* DataspinSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataspinSDK.h; sourceTree = "<group>"; };
 		B50FEA531AFE2F53003659F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AnalyticsSwiftSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5255ACA1AF6827200C04990 /* DataspinSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataspinSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5255ACE1AF6827200C04990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalyticsSwiftSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5255AD51AF6827200C04990 /* DataspinSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataspinSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5255ADB1AF6827200C04990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5255ADC1AF6827200C04990 /* AnalyticsSwiftSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsSwiftSDKTests.swift; sourceTree = "<group>"; };
 		B5255AE61AF6828400C04990 /* DataspinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataspinManager.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5255AD61AF6827200C04990 /* AnalyticsSwiftSDK.framework in Frameworks */,
+				B5255AD61AF6827200C04990 /* DataspinSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B53919EE1AF6908D0034F7BD /* AnalyticsSwiftSDK.framework in Frameworks */,
+				B53919EE1AF6908D0034F7BD /* DataspinSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,8 +147,8 @@
 		B5255ACB1AF6827200C04990 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */,
-				B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */,
+				B5255ACA1AF6827200C04990 /* DataspinSDK.framework */,
+				B5255AD51AF6827200C04990 /* DataspinSDKTests.xctest */,
 				B53919CC1AF6901D0034F7BD /* DataspinTest.app */,
 				B53919E01AF6901D0034F7BD /* DataspinTestTests.xctest */,
 			);
@@ -165,7 +165,7 @@
 				B5255AE61AF6828400C04990 /* DataspinManager.swift */,
 				B5989A5D1AF75CAB00090973 /* DataspinWebRequest.swift */,
 				B533FBD01AFAB9C800C84B3D /* Swift-MD5.swift */,
-				B50FEA511AFE2F2B003659F9 /* AnalyticsSwiftSDK.h */,
+				B50FEA511AFE2F2B003659F9 /* DataspinSDK.h */,
 			);
 			name = DataspinSDK;
 			path = AnalyticsSwiftSDK;
@@ -242,16 +242,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B50FEA521AFE2F2B003659F9 /* AnalyticsSwiftSDK.h in Headers */,
+				B50FEA521AFE2F2B003659F9 /* DataspinSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */ = {
+		B5255AC91AF6827200C04990 /* DataspinSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5255AE01AF6827200C04990 /* Build configuration list for PBXNativeTarget "AnalyticsSwiftSDK" */;
+			buildConfigurationList = B5255AE01AF6827200C04990 /* Build configuration list for PBXNativeTarget "DataspinSDK" */;
 			buildPhases = (
 				B5255AC51AF6827200C04990 /* Sources */,
 				B5255AC61AF6827200C04990 /* Frameworks */,
@@ -262,14 +262,14 @@
 			);
 			dependencies = (
 			);
-			name = AnalyticsSwiftSDK;
+			name = DataspinSDK;
 			productName = AnalyticsSwiftSDK;
-			productReference = B5255ACA1AF6827200C04990 /* AnalyticsSwiftSDK.framework */;
+			productReference = B5255ACA1AF6827200C04990 /* DataspinSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B5255AD41AF6827200C04990 /* AnalyticsSwiftSDKTests */ = {
+		B5255AD41AF6827200C04990 /* DataspinSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B5255AE31AF6827200C04990 /* Build configuration list for PBXNativeTarget "AnalyticsSwiftSDKTests" */;
+			buildConfigurationList = B5255AE31AF6827200C04990 /* Build configuration list for PBXNativeTarget "DataspinSDKTests" */;
 			buildPhases = (
 				B5255AD11AF6827200C04990 /* Sources */,
 				B5255AD21AF6827200C04990 /* Frameworks */,
@@ -280,9 +280,9 @@
 			dependencies = (
 				B5255AD81AF6827200C04990 /* PBXTargetDependency */,
 			);
-			name = AnalyticsSwiftSDKTests;
+			name = DataspinSDKTests;
 			productName = AnalyticsSwiftSDKTests;
-			productReference = B5255AD51AF6827200C04990 /* AnalyticsSwiftSDKTests.xctest */;
+			productReference = B5255AD51AF6827200C04990 /* DataspinSDKTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B53919CB1AF6901D0034F7BD /* DataspinTest */ = {
@@ -348,7 +348,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B5255AC41AF6827200C04990 /* Build configuration list for PBXProject "AnalyticsSwiftSDK" */;
+			buildConfigurationList = B5255AC41AF6827200C04990 /* Build configuration list for PBXProject "DataspinSDKProject" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -361,8 +361,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */,
-				B5255AD41AF6827200C04990 /* AnalyticsSwiftSDKTests */,
+				B5255AC91AF6827200C04990 /* DataspinSDK */,
+				B5255AD41AF6827200C04990 /* DataspinSDKTests */,
 				B53919CB1AF6901D0034F7BD /* DataspinTest */,
 				B53919DF1AF6901D0034F7BD /* DataspinTestTests */,
 			);
@@ -448,7 +448,7 @@
 /* Begin PBXTargetDependency section */
 		B5255AD81AF6827200C04990 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */;
+			target = B5255AC91AF6827200C04990 /* DataspinSDK */;
 			targetProxy = B5255AD71AF6827200C04990 /* PBXContainerItemProxy */;
 		};
 		B53919E21AF6901D0034F7BD /* PBXTargetDependency */ = {
@@ -458,7 +458,7 @@
 		};
 		B53919F11AF6908D0034F7BD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B5255AC91AF6827200C04990 /* AnalyticsSwiftSDK */;
+			target = B5255AC91AF6827200C04990 /* DataspinSDK */;
 			targetProxy = B53919F01AF6908D0034F7BD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -718,7 +718,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B5255AC41AF6827200C04990 /* Build configuration list for PBXProject "AnalyticsSwiftSDK" */ = {
+		B5255AC41AF6827200C04990 /* Build configuration list for PBXProject "DataspinSDKProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5255ADE1AF6827200C04990 /* Debug */,
@@ -727,7 +727,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5255AE01AF6827200C04990 /* Build configuration list for PBXNativeTarget "AnalyticsSwiftSDK" */ = {
+		B5255AE01AF6827200C04990 /* Build configuration list for PBXNativeTarget "DataspinSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5255AE11AF6827200C04990 /* Debug */,
@@ -736,7 +736,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5255AE31AF6827200C04990 /* Build configuration list for PBXNativeTarget "AnalyticsSwiftSDKTests" */ = {
+		B5255AE31AF6827200C04990 /* Build configuration list for PBXNativeTarget "DataspinSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B5255AE41AF6827200C04990 /* Debug */,

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AnalyticsSwiftSDK
+import DataspinSDK
 import MessageUI
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate {
