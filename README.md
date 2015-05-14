@@ -26,6 +26,7 @@ Integrating Dataspin takes two easy steps:
          			      delegate:self];
            
      }
+```
 It is shown as is for example purposes only.
 
 ### Dive deeper
