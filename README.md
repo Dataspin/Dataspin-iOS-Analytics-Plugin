@@ -21,11 +21,17 @@ Integrating Dataspin takes two easy steps:
      - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions       
      {
          // initialize the Dataspin library
-         [Chartboost startWithAppId:@"YOUR_CHARTBOOST_APP_ID" 
-         			  appSignature:@"YOUR_CHARTBOOST_APP_SIGNATURE" 
-         			      delegate:self];
            
      }
+```
+
+If you're using Swift, it will look like this:
+```
+    import DataspinSDK
+    
+    override func viewDidLoad() {
+        DataspinManager.Instance.Start(domainLabel.text, apiKey: apiKeyLabel.text, debugMode: debugSwitch.on, appVersion: appVersionLabel.text)
+    }
 ```
 It is shown as is for example purposes only.
 
