@@ -26,7 +26,7 @@ Integrating Dataspin takes two easy steps:
 ```
 
 If you're using Swift, it will look like this:
-```
+```swift
     import DataspinSDK
     
     override func viewDidLoad() {
